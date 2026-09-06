@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tariq Khawaji | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --border-color: #30363d;
+      --accent-color: #00a8ff;
+      --text-main: #f0f6fc;
+      --text-sub: #8b949e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .path-header {
+      font-family: 'Fira Code', monospace;
+      color: var(--accent-color);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .path-header span {
+      color: var(--text-sub);
+    }
+
+    .profile-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-subtitle {
+      font-size: 1.8rem;
+      color: #38bdf8;
+      margin-bottom: 0.8rem;
+    }
+
+    .role {
+      font-family: 'Fira Code', monospace;
+      color: var(--text-sub);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: #000;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-sub);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background-color: var(--border-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .stat-card {
+      background-color: var(--bg-color);
+      padding: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Path Header -->
+    <div class="path-header">
+      <span>> whoami ></span> whoami <span>|</span>
+    </div>
+
+    <!-- Title & Intro -->
+    <h1 class="profile-title">Tariq Khawaji</h1>
+    <h2 class="profile-subtitle">Electrical Engineer.</h2>
+    <p class="role">Electrical Maintenance & Distribution Engineer</p>
+
+    <!-- Action Buttons -->
+    <div class="btn-group">
+      <a href="mailto:Tarqkhwajy50@gmail.com" class="btn btn-primary">get in touch</a>
+      <a href="#" class="btn btn-secondary">Download Resume &darr;</a>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">3+</div>
+        <div class="stat-label">certifications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">hours field work</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">honors & awards</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
