@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tariq Khawaji | Portfolio</title>
+  <title>Tariq Khawaji | Electrical Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -11,6 +11,7 @@
       --card-bg: #161b22;
       --border-color: #30363d;
       --accent-color: #00a8ff;
+      --linkedin-color: #0a66c2;
       --text-main: #f0f6fc;
       --text-sub: #8b949e;
     }
@@ -28,12 +29,11 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 700px;
       width: 100%;
     }
 
@@ -70,19 +70,23 @@
 
     .btn-group {
       display: flex;
-      gap: 1rem;
-      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
     }
 
     .btn {
-      padding: 0.75rem 1.5rem;
-      font-size: 0.95rem;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
       font-weight: 600;
       border-radius: 6px;
       text-decoration: none;
       cursor: pointer;
       transition: all 0.2s ease;
       font-family: 'Fira Code', monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .btn-primary {
@@ -91,8 +95,10 @@
       border: none;
     }
 
-    .btn-primary:hover {
-      opacity: 0.9;
+    .btn-linkedin {
+      background-color: var(--linkedin-color);
+      color: #ffffff;
+      border: none;
     }
 
     .btn-secondary {
@@ -101,77 +107,156 @@
       border: 1px solid var(--border-color);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--text-sub);
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background-color: var(--border-color);
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin: 2.5rem 0 1rem 0;
+      font-family: 'Fira Code', monospace;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .timeline-item, .card-item {
+      background-color: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      overflow: hidden;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
     }
 
-    .stat-card {
-      background-color: var(--bg-color);
-      padding: 1.5rem;
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
     }
 
-    .stat-number {
-      font-size: 2.2rem;
+    .item-title {
       font-weight: 700;
+      font-size: 1.05rem;
       color: var(--text-main);
-      margin-bottom: 0.5rem;
     }
 
-    .stat-label {
+    .item-date {
       font-family: 'Fira Code', monospace;
       font-size: 0.85rem;
       color: var(--text-sub);
+    }
+
+    .item-sub {
+      color: var(--accent-color);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-desc {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .tag {
+      background-color: rgba(0, 168, 255, 0.1);
+      color: var(--accent-color);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 168, 255, 0.2);
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <!-- Path Header -->
     <div class="path-header">
-      <span>> whoami ></span> whoami <span>|</span>
+      <span>> whoami ></span> Tariq_Khawaji <span>|</span>
     </div>
 
-    <!-- Title & Intro -->
     <h1 class="profile-title">Tariq Khawaji</h1>
     <h2 class="profile-subtitle">Electrical Engineer.</h2>
     <p class="role">Electrical Maintenance & Distribution Engineer</p>
 
-    <!-- Action Buttons -->
     <div class="btn-group">
       <a href="mailto:Tarqkhwajy50@gmail.com" class="btn btn-primary">get in touch</a>
+      <a href="https://www.linkedin.com/in/tariq-khawaji" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">LinkedIn &nearr;</a>
       <a href="#" class="btn btn-secondary">Download Resume &darr;</a>
     </div>
 
-    <!-- Stats Grid -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">certifications</div>
+    <!-- Work Experience -->
+    <h3 class="section-title">> Experience</h3>
+    
+    <div class="timeline-item">
+      <div class="item-header">
+        <span class="item-title">Electrical Maintenance Engineer</span>
+        <span class="item-date">May 2024 - Present</span>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">hours field work</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">5+</div>
-        <div class="stat-label">projects</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">4</div>
-        <div class="stat-label">honors & awards</div>
+      <div class="item-sub">Saudi Electricity Company (SEC)</div>
+      <p class="item-desc">Managing medium & low voltage distribution systems, overseeing preventive maintenance operations, outage recovery, and analyzing smart metering and grid reliability.</p>
+      <div class="tags">
+        <span class="tag">MV/LV Distribution</span>
+        <span class="tag">Preventive Maintenance</span>
+        <span class="tag">Smart Grid</span>
       </div>
     </div>
+
+    <div class="timeline-item">
+      <div class="item-header">
+        <span class="item-title">Electrical Projects Engineer</span>
+        <span class="item-date">Nov 2023 - Apr 2024</span>
+      </div>
+      <div class="item-sub">Dasr Arabia Contracting Company</div>
+      <p class="item-desc">Supervised medium and low voltage power infrastructure upgrade projects and technical installation compliance.</p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="item-header">
+        <span class="item-title">Electrical Technician & Work Supervisor</span>
+        <span class="item-date">Aug 2022 - May 2023</span>
+      </div>
+      <div class="item-sub">Amjad Office for Engineering Consultations</div>
+      <p class="item-desc">Supervised site technical executions and electrical system compliance monitoring.</p>
+    </div>
+
+    <!-- Education -->
+    <h3 class="section-title">> Education</h3>
+    
+    <div class="card-item">
+      <div class="item-header">
+        <span class="item-title">Bachelor's Degree in Electrical Engineering</span>
+        <span class="item-date">Nov 2023</span>
+      </div>
+      <div class="item-sub">College of Technology in Jazan</div>
+    </div>
+
+    <!-- Certifications -->
+    <h3 class="section-title">> Certifications & Memberships</h3>
+    
+    <div class="card-item">
+      <div class="item-title">Project Management Professional (PMP) Training</div>
+    </div>
+    
+    <div class="card-item">
+      <div class="item-title">NEBOSH Occupational Health & Safety</div>
+    </div>
+
+    <div class="card-item">
+      <div class="item-title">Accredited Member - Saudi Council of Engineers</div>
+    </div>
+
   </div>
 
 </body>
