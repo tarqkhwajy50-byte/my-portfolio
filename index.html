@@ -3,321 +3,363 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tariq Khawaji | Electrical Engineer, PMP®</title>
-  <meta name="description" content="PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks: maintenance planning, switching programs, fault analysis and project coordination. Saudi Arabia.">
-  <meta property="og:type" content="profile">
-  <meta property="og:title" content="Tariq Khawaji | Electrical Engineer, PMP®">
-  <meta property="og:description" content="MV/LV distribution networks: maintenance planning, switching programs, fault analysis and project coordination.">
-  <meta name="theme-color" content="#0f172a">
+  <title>Tariq Khawaji | Futuristic Portfolio & Dashboard</title>
+  <meta name="description" content="PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks, futuristic interactive portfolio.">
+  <meta name="theme-color" content="#030712">
   <!-- Google Fonts: Tajawal & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
   <style>
     :root {
-      --bg-main: #f8fafc;
-      --card-bg: #ffffff;
-      --sidebar-bg: #0f172a;
-      --sidebar-line: #1e293b;
-      --primary: #2563eb;
-      --primary-light: #eff6ff;
+      --bg-core: #030712;
+      --bg-panel: rgba(15, 23, 42, 0.75);
+      --border-neon: rgba(56, 189, 248, 0.2);
+      --border-neon-hover: rgba(56, 189, 248, 0.6);
+      --primary: #38bdf8;
       --accent: #0284c7;
-      --gold: #eab308;
-      --green: #16a34a;
-      --green-light: #f0fdf4;
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --gold: #facc15;
+      --green: #4ade80;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --glow: 0 0 25px rgba(56, 189, 248, 0.15);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--bg-main);
-      color: var(--text-dark);
+      background-color: var(--bg-core);
+      color: var(--text-main);
       font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif;
       min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 40%);
     }
 
     a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
-    /* Top Navigation Bar */
-    .top-nav {
-      position: sticky;
-      top: 0;
+    /* Futuristic Floating Navbar */
+    .nav-sci {
+      position: fixed;
+      top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 0.9rem 2rem;
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-neon);
+      padding: 1rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #fff;
     }
 
-    .nav-brand {
+    .brand-sci {
       font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      font-size: 1.2rem;
       color: #fff;
       text-decoration: none;
-    }
-
-    .nav-brand span { color: var(--gold); }
-
-    .nav-links {
       display: flex;
-      gap: 1.5rem;
-      list-style: none;
       align-items: center;
+      gap: 0.6rem;
+      letter-spacing: -0.01em;
     }
+    .brand-sci i { color: var(--gold); text-shadow: 0 0 10px var(--gold); }
+    .brand-sci span { color: var(--primary); }
 
-    .nav-links a {
-      color: #cbd5e1;
+    .nav-items { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-items a {
+      color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.88rem;
+      font-weight: 600;
       transition: var(--transition);
     }
+    .nav-items a:hover { color: var(--primary); text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
 
-    .nav-links a:hover {
-      color: #fff;
-      transform: translateY(-1px);
+    /* Main Container Layout */
+    .sci-container {
+      max-width: 1300px;
+      margin: 100px auto 40px;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2.5rem;
     }
 
-    .dashboard-container { display: flex; width: 100%; min-height: calc(100vh - 65px); }
-
-    /* Sidebar */
-    .sidebar {
-      width: 340px;
-      flex-shrink: 0;
-      background-color: var(--sidebar-bg);
-      color: #ffffff;
-      padding: 2.5rem 1.5rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
+    /* Sci-Fi Sidebar Panel */
+    .sci-sidebar {
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-neon);
+      border-radius: 20px;
+      padding: 2.2rem 1.5rem;
+      height: fit-content;
       position: sticky;
-      top: 65px;
-      height: calc(100vh - 65px);
-      overflow-y: auto;
-      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+      top: 95px;
+      box-shadow: var(--glow);
     }
 
-    .profile-card { text-align: center; padding-bottom: 1.5rem; border-bottom: 1px solid var(--sidebar-line); }
+    .profile-hud { text-align: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 
-    .avatar-icon {
-      width: 96px; height: 96px;
+    .hud-avatar {
+      width: 100px; height: 100px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1rem auto;
-      font-size: 2.4rem;
-      color: #ffffff;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+      margin: 0 auto 1.2rem;
+      font-size: 2.6rem;
+      color: #fff;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
       position: relative;
     }
-    .avatar-badge {
-      position: absolute; right: -2px; bottom: 2px;
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--gold); color: var(--sidebar-bg);
-      border: 3px solid var(--sidebar-bg);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem;
+    .hud-avatar::after {
+      content: '';
+      position: absolute; inset: -4px;
+      border: 2px dashed var(--primary);
+      border-radius: 50%;
+      animation: spin 15s linear infinite;
     }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
 
-    .profile-card h1 { font-size: 1.5rem; font-weight: 800; color: #ffffff; }
-    .profile-card .title { font-size: 0.92rem; color: #cbd5e1; margin-top: 0.35rem; font-weight: 600; }
-    .profile-card .sub { font-size: 0.82rem; color: #94a3b8; margin-top: 0.25rem; }
+    .profile-hud h1 { font-size: 1.45rem; font-weight: 800; color: #fff; }
+    .profile-hud .role { font-size: 0.88rem; color: var(--primary); margin-top: 0.3rem; font-weight: 600; }
+    .profile-hud .sub-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
 
-    .side-label { font-size: 0.78rem; font-weight: 700; color: #94a3b8; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .hud-section-title { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 1.5rem 0 0.8rem; }
 
-    .contact-info { display: flex; flex-direction: column; gap: 0.85rem; }
-    .contact-item { display: flex; align-items: center; gap: 0.8rem; font-size: 0.85rem; color: #cbd5e1; text-decoration: none; word-break: break-all; }
-    a.contact-item:hover span { color: #ffffff; text-decoration: underline; }
-    .contact-item i {
-      width: 32px; height: 32px; flex-shrink: 0;
-      background-color: var(--sidebar-line);
-      color: #38bdf8;
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem;
-    }
-
-    .id-list { display: flex; flex-direction: column; gap: 0.6rem; }
-    .id-item {
+    .contact-hud { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-link {
       display: flex; align-items: center; gap: 0.8rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--sidebar-line);
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       padding: 0.65rem 0.8rem;
+      border-radius: 10px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
       transition: var(--transition);
+      word-break: break-all;
     }
-    .id-item:hover { background: rgba(255,255,255,0.06); }
-    .id-item i { color: var(--gold); font-size: 1rem; width: 20px; text-align: center; }
-    .id-item small { display: block; font-size: 0.72rem; color: #94a3b8; }
-    .id-item strong { font-size: 0.88rem; color: #ffffff; }
+    .contact-link:hover { background: rgba(56, 189, 248, 0.08); border-color: var(--primary); color: #fff; }
+    .contact-link i { color: var(--primary); font-size: 0.95rem; }
 
-    .sidebar-btns { display: flex; flex-direction: column; gap: 0.75rem; margin-top: auto; }
+    .creds-hud { display: flex; flex-direction: column; gap: 0.6rem; }
+    .cred-badge-box {
+      background: rgba(250, 204, 21, 0.04);
+      border: 1px solid rgba(250, 204, 21, 0.15);
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .cred-badge-box i { color: var(--gold); font-size: 1.1rem; }
+    .cred-badge-box small { display: block; font-size: 0.7rem; color: var(--text-muted); }
+    .cred-badge-box strong { font-size: 0.85rem; color: #fff; }
 
-    .btn {
+    .hud-actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.8rem; }
+    .btn-sci {
       padding: 0.8rem 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.88rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.85rem;
       text-decoration: none;
       display: flex; align-items: center; justify-content: center; gap: 0.6rem;
       transition: var(--transition);
+      cursor: pointer;
     }
-    .btn-cv { background-color: var(--primary); color: #ffffff; }
-    .btn-linkedin { background-color: #0a66c2; color: #ffffff; }
-    .btn-mail { background-color: var(--sidebar-line); color: #ffffff; border: 1px solid #475569; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); opacity: 0.95; }
+    .btn-primary-sci {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+      border: none;
+    }
+    .btn-primary-sci:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5); }
+    .btn-secondary-sci {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .btn-secondary-sci:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--primary); }
 
     /* Main Content Area */
-    .main-content { flex: 1; min-width: 0; padding: 3rem 3.5rem; }
+    .sci-content { display: flex; flex-direction: column; gap: 2.5rem; }
 
-    /* Hero Section */
-    .header-banner {
-      background: linear-gradient(135deg, var(--card-bg) 0%, #f8fafc 100%);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--primary);
+    /* Sci-Fi Glass Card (Generic Assembly Item) */
+    .glass-card {
+      background: var(--bg-panel);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-neon);
+      border-radius: 20px;
       padding: 2.2rem;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--glow);
       transition: var(--transition);
+      position: relative;
+      overflow: hidden;
     }
-    .header-banner:hover { box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.08); }
-    .header-banner h2 { font-size: 1.5rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem; }
-    .header-banner p { color: var(--text-muted); line-height: 1.8; font-size: 0.98rem; max-width: 75ch; }
-    .open-to { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; font-size: 0.85rem; color: var(--text-dark); font-weight: 600; }
+    .glass-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      opacity: 0.5;
+    }
+    .glass-card:hover {
+      border-color: var(--border-neon-hover);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
+      transform: translateY(-3px);
+    }
 
-    .section-title { font-size: 1.25rem; font-weight: 700; margin: 3rem 0 1.25rem 0; display: flex; align-items: center; gap: 0.6rem; letter-spacing: -0.01em; }
-    .section-title i { color: var(--primary); }
+    .hero-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.7rem; color: #fff; }
+    .hero-title i { color: var(--gold); }
+    .hero-desc { color: var(--text-muted); line-height: 1.8; font-size: 1rem; }
+    
+    .open-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
+    .tech-tag {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: var(--primary);
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .section-sci-title {
+      font-size: 1.3rem; font-weight: 800; color: #fff;
+      margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .section-sci-title i { color: var(--primary); }
 
     /* KPIs Grid */
-    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
-    .kpi {
-      background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
-      padding: 1.4rem; box-shadow: var(--shadow); transition: var(--transition);
+    .kpi-sci-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    .kpi-sci-card {
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-neon);
+      border-radius: 16px;
+      padding: 1.4rem;
+      box-shadow: var(--glow);
+      transition: var(--transition);
     }
-    .kpi:hover { transform: translateY(-4px); border-color: var(--primary); }
-    .kpi .kpi-icon {
+    .kpi-sci-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .kpi-icon-box {
       width: 42px; height: 42px; border-radius: 10px;
-      background: var(--primary-light); color: var(--primary);
-      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
     }
-    .kpi.good .kpi-icon { background: var(--green-light); color: var(--green); }
-    .kpi b { display: block; font-size: 2.1rem; font-weight: 800; margin-top: 0.8rem; line-height: 1; color: var(--text-dark); }
-    .kpi span { display: block; font-size: 0.84rem; color: var(--text-muted); margin-top: 0.45rem; line-height: 1.4; }
-    .kpi-note { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.8rem; font-style: italic; }
+    .kpi-sci-card.good .kpi-icon-box { background: rgba(74, 222, 128, 0.1); color: var(--green); }
+    .kpi-sci-card b { display: block; font-size: 2.2rem; font-weight: 800; color: #fff; margin-top: 0.8rem; line-height: 1; }
+    .kpi-sci-card span { display: block; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.4; }
+    .kpi-footnote { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.8rem; font-style: italic; }
 
-    /* Cards Grid */
-    .cards-grid { display: flex; flex-direction: column; gap: 1.25rem; }
-    .dash-card {
-      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 14px;
-      padding: 1.8rem; box-shadow: var(--shadow); transition: var(--transition);
+    /* Experience & Cards Stack */
+    .stack-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .exp-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .exp-title-group { display: flex; align-items: center; gap: 1rem; }
+    .exp-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
     }
-    .dash-card:hover { transform: translateY(-2px); border-color: var(--primary); box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.08); }
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .card-title-group { display: flex; align-items: center; gap: 1rem; }
-    .card-icon {
-      width: 48px; height: 48px; flex-shrink: 0;
-      background-color: var(--primary-light); color: var(--primary);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    .exp-title { font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .exp-company { font-size: 0.92rem; color: var(--primary); font-weight: 600; margin-top: 0.15rem; }
+    
+    .sci-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.8rem; font-weight: 600;
     }
-    .card-icon.green { background: var(--green-light); color: var(--green); }
-    .card-icon.gold { background: #fefce8; color: #ca8a04; }
-    .card-title { font-size: 1.12rem; font-weight: 700; color: var(--text-dark); }
-    .card-subtitle { font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-top: 0.15rem; }
-    .card-badge {
-      background-color: #f1f5f9; color: var(--text-muted);
-      font-size: 0.8rem; padding: 0.35rem 0.85rem; border-radius: 20px; font-weight: 600; white-space: nowrap;
+    .sci-badge.active { background: rgba(74, 222, 128, 0.1); border-color: rgba(74, 222, 128, 0.3); color: var(--green); }
+
+    .exp-bullets { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .exp-bullets li { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; position: relative; padding-left: 1.2rem; }
+    .exp-bullets li::before { content: "▹"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+
+    /* Two Columns Grid */
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    .cred-rows-sci { margin-top: 0.8rem; display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1.2rem; font-size: 0.88rem; }
+    .cred-rows-sci dt { color: var(--text-muted); }
+    .cred-rows-sci dd { font-weight: 700; color: #fff; }
+    
+    .verify-btn-sci { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; font-size: 0.85rem; font-weight: 700; color: var(--primary); text-decoration: none; transition: var(--transition); }
+    .verify-btn-sci:hover { color: #fff; text-shadow: 0 0 10px var(--primary); }
+
+    /* Training & Skills Grid */
+    .skills-sci-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .skill-sci-card {
+      background: var(--bg-panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-neon);
+      border-radius: 14px;
+      padding: 1.2rem;
+      display: flex; align-items: center; gap: 1rem;
+      box-shadow: var(--glow);
+      transition: var(--transition);
     }
-    .card-badge.current { background: var(--green-light); color: var(--green); }
-
-    .card-bullets { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
-    .card-bullets li { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; position: relative; padding-left: 1.2rem; }
-    .card-bullets li::before { content: "•"; color: var(--primary); font-weight: bold; position: absolute; left: 0; font-size: 1.1rem; }
-
-    .tags-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
-    .tag-item { background-color: var(--primary-light); color: var(--primary); font-size: 0.78rem; font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 6px; }
-
-    .two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .card-text { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
-
-    .cred-rows { margin-top: 0.6rem; display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1.2rem; font-size: 0.88rem; }
-    .cred-rows dt { color: var(--text-muted); }
-    .cred-rows dd { font-weight: 700; color: var(--text-dark); }
-    .verify-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.2rem; font-size: 0.86rem; font-weight: 700; color: var(--primary); text-decoration: none; transition: var(--transition); }
-    .verify-link:hover { text-decoration: underline; color: var(--accent); }
-
-    /* Courses & Skills Grid */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; }
-    .skill-card {
-      background-color: var(--card-bg); border: 1px solid var(--border); border-radius: 12px;
-      padding: 1.2rem 1.4rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow); transition: var(--transition);
+    .skill-sci-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+    .skill-sci-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(74, 222, 128, 0.1);
+      color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
     }
-    .skill-card:hover { transform: translateY(-3px); border-color: var(--primary); }
-    .skill-icon {
-      width: 42px; height: 42px; flex-shrink: 0;
-      background-color: var(--green-light); color: var(--green);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    .skill-sci-name { font-weight: 700; font-size: 0.9rem; color: #fff; }
+    .skill-sci-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
+
+    .tags-cloud { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+    .tags-cloud li {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: var(--primary);
+      font-size: 0.82rem; font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      transition: var(--transition);
     }
-    .skill-card .name { font-weight: 700; font-size: 0.92rem; color: var(--text-dark); }
-    .skill-card .meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .tags-cloud li:hover { background: var(--primary); color: #030712; box-shadow: 0 0 15px var(--primary); }
+    .tags-cloud.soft li { background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.08); color: var(--text-main); }
+    .tags-cloud.soft li:hover { background: #fff; color: #030712; box-shadow: 0 0 15px #fff; }
 
-    .skill-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
-    .skill-list li { background: var(--primary-light); color: var(--primary); font-size: 0.82rem; font-weight: 600; padding: 0.45rem 0.85rem; border-radius: 8px; transition: var(--transition); }
-    .skill-list li:hover { background: var(--primary); color: #fff; }
-    .skill-list.soft li { background: #f1f5f9; color: var(--text-dark); }
-    .skill-list.soft li:hover { background: var(--text-dark); color: #fff; }
-    .lang-row { display: flex; gap: 0.6rem; margin-top: 1.4rem; align-items: center; flex-wrap: wrap; font-size: 0.88rem; font-weight: 600; }
-    .lang-row i { color: var(--primary); }
-
-    .footer { margin-top: 3.5rem; font-size: 0.85rem; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    .sci-footer { text-align: center; margin-top: 3.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.5rem; }
 
     /* Responsive Design */
-    @media (max-width: 1150px) {
-      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 1100px) {
+      .sci-container { grid-template-columns: 1fr; }
+      .sci-sidebar { position: relative; top: 0; }
+      .kpi-sci-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 900px) {
-      .top-nav { padding: 0.8rem 1.2rem; }
-      .nav-links { gap: 1rem; }
-      .dashboard-container { flex-direction: column; }
-      .sidebar { width: 100%; height: auto; position: relative; top: 0; overflow: visible; }
-      .main-content { padding: 2rem 1.5rem; }
-      .two-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 520px) {
-      .nav-links { display: none; } /* Mobile simplified navbar */
-      .main-content { padding: 1.2rem; }
-      .kpi-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .kpi b { font-size: 1.8rem; }
-      .dash-card { padding: 1.3rem; }
-      .card-title-group { gap: 0.75rem; }
-      .card-icon { width: 40px; height: 40px; font-size: 1.1rem; }
-      .skills-grid { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
+      .nav-items { display: none; }
+      .grid-2col { grid-template-columns: 1fr; }
+      .kpi-sci-grid { grid-template-columns: 1fr; }
+      .sci-container { padding: 0 1rem; margin-top: 80px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
-  <nav class="top-nav">
-    <a href="#" class="nav-brand"><i class="fa-solid fa-bolt" style="color: var(--gold);"></i> Tariq <span>Khawaji</span></a>
-    <ul class="nav-links">
+  <!-- Futuristic Navigation Bar -->
+  <nav class="nav-sci">
+    <a href="#" class="brand-sci"><i class="fa-solid fa-bolt"></i> Tariq <span>Khawaji</span></a>
+    <ul class="nav-items">
       <li><a href="#summary">Summary</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -327,209 +369,224 @@
     </ul>
   </nav>
 
-  <div class="dashboard-container">
+  <!-- Main Container -->
+  <div class="sci-container">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile-card">
-        <div class="avatar-icon">
-          <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
-          <span class="avatar-badge" title="Electrical Engineer"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>
+    <!-- Sci-Fi Sidebar Panel -->
+    <aside class="sci-sidebar">
+      <div class="profile-hud">
+        <div class="hud-avatar">
+          <i class="fa-solid fa-user-gear"></i>
         </div>
         <h1>Tariq Khawaji</h1>
-        <p class="title">Electrical Engineer | PMP®</p>
-        <p class="sub">MV/LV Distribution Networks</p>
+        <p class="role">Electrical Engineer | PMP®</p>
+        <p class="sub-role">MV/LV Distribution Networks</p>
       </div>
 
-      <div>
-        <p class="side-label">Contact</p>
-        <div class="contact-info">
-          <a class="contact-item" href="mailto:tarqkhwajy50@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>tarqkhwajy50@gmail.com</span></a>
-          <a class="contact-item" href="tel:+966530605226"><i class="fa-solid fa-phone" aria-hidden="true"></i><span>0530605226</span></a>
-          <div class="contact-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Saudi Arabia</span></div>
+      <p class="hud-section-title">Communication</p>
+      <div class="contact-hud">
+        <a class="contact-link" href="mailto:tarqkhwajy50@gmail.com"><i class="fa-solid fa-envelope"></i><span>tarqkhwajy50@gmail.com</span></a>
+        <a class="contact-link" href="tel:+966530605226"><i class="fa-solid fa-phone"></i><span>0530605226</span></a>
+        <div class="contact-link"><i class="fa-solid fa-location-dot"></i><span>Saudi Arabia</span></div>
+      </div>
+
+      <p class="hud-section-title">Verified Credentials</p>
+      <div class="creds-hud">
+        <div class="cred-badge-box">
+          <i class="fa-solid fa-award"></i>
+          <div><small>PMP® Certification No.</small><strong>4337782</strong></div>
+        </div>
+        <div class="cred-badge-box">
+          <i class="fa-solid fa-id-card"></i>
+          <div><small>SCE Membership No.</small><strong>827761</strong></div>
         </div>
       </div>
 
-      <div>
-        <p class="side-label">Credentials</p>
-        <div class="id-list">
-          <div class="id-item"><i class="fa-solid fa-award" aria-hidden="true"></i><div><small>PMP® Certification No.</small><strong>4337782</strong></div></div>
-          <div class="id-item"><i class="fa-solid fa-id-card" aria-hidden="true"></i><div><small>Saudi Council of Engineers No.</small><strong>827761</strong></div></div>
-        </div>
-      </div>
-
-      <div class="sidebar-btns">
-        <a href="https://drive.google.com/file/d/1NSpiySoVOFG7P4ECps94Uzwl4LAIHicz/view" target="_blank" rel="noopener" class="btn btn-cv">
-          <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> View CV (PDF)
+      <div class="hud-actions">
+        <a href="https://drive.google.com/file/d/1NSpiySoVOFG7P4ECps94Uzwl4LAIHicz/view" target="_blank" rel="noopener" class="btn-sci btn-primary-sci">
+          <i class="fa-solid fa-file-pdf"></i> View CV (PDF)
         </a>
-        <a href="https://www.linkedin.com/in/tariq-khawaji-11a301263" target="_blank" rel="noopener" class="btn btn-linkedin">
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn Profile
-        </a>
-        <a href="mailto:tarqkhwajy50@gmail.com" class="btn btn-mail">
-          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send an Email
+        <a href="https://www.linkedin.com/in/tariq-khawaji-11a301263" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
         </a>
       </div>
     </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Content Stack (Assembly Target) -->
+    <main class="sci-content">
 
-      <!-- Summary -->
-      <section id="summary" style="scroll-margin-top: 90px;">
-        <div class="header-banner">
-          <h2><i class="fa-solid fa-bolt-lightning" style="color: var(--gold);" aria-hidden="true"></i> Professional Summary</h2>
-          <p>PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks, combining network maintenance with project coordination. I plan preventive and corrective maintenance for 30+ MV feeders across 20+ substations, prepare Switching Programs for planned outages, and have coordinated overhead-to-underground network projects under SEC's Unified Contract.</p>
-          <div class="open-to">
-            <span>Open to:</span>
-            <span class="tag-item">Maintenance Engineer</span>
-            <span class="tag-item">Project Coordinator</span>
-            <span class="tag-item">Project Engineer</span>
+      <!-- Summary Section -->
+      <section id="summary" class="assembly-item">
+        <div class="glass-card">
+          <h2 class="hero-title"><i class="fa-solid fa-bolt-lightning"></i> Professional Summary</h2>
+          <p class="hero-desc">PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks, combining network maintenance with project coordination. I plan preventive and corrective maintenance for 30+ MV feeders across 20+ substations, prepare Switching Programs for planned outages, and have coordinated overhead-to-underground network projects under SEC's Unified Contract.</p>
+          <div class="open-tags">
+            <span class="tech-tag">Open to: Maintenance Engineer</span>
+            <span class="tech-tag">Project Coordinator</span>
+            <span class="tech-tag">Project Engineer</span>
           </div>
         </div>
       </section>
 
-      <!-- Key Results -->
-      <h3 class="section-title"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Key Results</h3>
-      <div class="kpi-grid">
-        <div class="kpi"><div class="kpi-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div><b>30+</b><span>MV feeders under maintenance planning</span></div>
-        <div class="kpi"><div class="kpi-icon"><i class="fa-solid fa-industry" aria-hidden="true"></i></div><b>20+</b><span>Substations covered</span></div>
-        <div class="kpi good"><div class="kpi-icon"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i></div><b>17%</b><span>SAIFI improvement (2025) against a 1% target</span></div>
-        <div class="kpi good"><div class="kpi-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div><b>16%</b><span>SAIDI improvement (2026) against a 1% target</span></div>
-      </div>
-      <p class="kpi-note">SAIFI and SAIDI are team results that my switching programs and maintenance planning contributed to.</p>
+      <!-- Key Results Section -->
+      <section class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-chart-line"></i> Performance Metrics &amp; Key Results</h3>
+        <div class="kpi-sci-grid">
+          <div class="kpi-sci-card">
+            <div class="kpi-icon-box"><i class="fa-solid fa-network-wired"></i></div>
+            <b>30+</b>
+            <span>MV feeders under maintenance planning</span>
+          </div>
+          <div class="kpi-sci-card">
+            <div class="kpi-icon-box"><i class="fa-solid fa-industry"></i></div>
+            <b>20+</b>
+            <span>Substations covered</span>
+          </div>
+          <div class="kpi-sci-card good">
+            <div class="kpi-icon-box"><i class="fa-solid fa-arrow-trend-down"></i></div>
+            <b>17%</b>
+            <span>SAIFI improvement (2025) vs 1% target</span>
+          </div>
+          <div class="kpi-sci-card good">
+            <div class="kpi-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <b>16%</b>
+            <span>SAIDI improvement (2026) vs 1% target</span>
+          </div>
+        </div>
+        <p class="kpi-footnote">SAIFI and SAIDI are team results that my switching programs and maintenance planning contributed to.</p>
+      </section>
 
-      <!-- Experience -->
-      <section id="experience" style="scroll-margin-top: 90px;">
-        <h3 class="section-title"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Professional Experience</h3>
-        <div class="cards-grid">
+      <!-- Experience Section -->
+      <section id="experience" class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h3>
+        <div class="stack-list">
 
-          <div class="dash-card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <div class="card-icon"><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i></div>
+          <div class="glass-card">
+            <div class="exp-card-header">
+              <div class="exp-title-group">
+                <div class="exp-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
                 <div>
-                  <div class="card-title">Distribution Network Engineer</div>
-                  <div class="card-subtitle">Saudi Energy Company</div>
+                  <div class="exp-title">Distribution Network Engineer</div>
+                  <div class="exp-company">Saudi Energy Company</div>
                 </div>
               </div>
-              <span class="card-badge current">May 2024 – Present</span>
+              <span class="sci-badge active">May 2024 – Present</span>
             </div>
-            <ul class="card-bullets">
+            <ul class="exp-bullets">
               <li>Plan and prioritize preventive and corrective maintenance across 30+ MV feeders in 20+ substations, defining scope of work and execution sequence for each activity.</li>
               <li>Develop Switching Programs for planned outages, defining isolation, restoration, and load-transfer sequences that keep customers supplied, contributing to SAIFI (17%, 2025) and SAIDI (16%, 2026) gains against 1% targets.</li>
               <li>Coordinate outage approvals and scheduling with the Network Control Center, validating plans against feeder SLDs and network layouts for accuracy and safety compliance.</li>
               <li>Conduct network inspections, handle emergency faults, and perform Root Cause Analysis to support corrective and preventive actions.</li>
               <li>Maintain MV/LV distribution transformers and feeders under periodic maintenance plans.</li>
             </ul>
-            <div class="tags-group">
-              <span class="tag-item">MV/LV Networks</span>
-              <span class="tag-item">Preventive &amp; Corrective Maintenance</span>
-              <span class="tag-item">Switching Programs</span>
-              <span class="tag-item">Root Cause Analysis</span>
-              <span class="tag-item">SAP</span>
-              <span class="tag-item">SCADA</span>
+            <div class="open-tags">
+              <span class="tech-tag">MV/LV Networks</span>
+              <span class="tech-tag">Maintenance Planning</span>
+              <span class="tech-tag">Switching Programs</span>
+              <span class="tech-tag">Root Cause Analysis</span>
+              <span class="tech-tag">SAP &amp; SCADA</span>
             </div>
           </div>
 
-          <div class="dash-card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <div class="card-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+          <div class="glass-card">
+            <div class="exp-card-header">
+              <div class="exp-title-group">
+                <div class="exp-icon"><i class="fa-solid fa-diagram-project"></i></div>
                 <div>
-                  <div class="card-title">Electrical Engineer (Project Coordination)</div>
-                  <div class="card-subtitle">Dussur Contracting Company</div>
+                  <div class="exp-title">Electrical Engineer (Project Coordination)</div>
+                  <div class="exp-company">Dussur Contracting Company</div>
                 </div>
               </div>
-              <span class="card-badge">Nov 2023 – Apr 2024</span>
+              <span class="sci-badge">Nov 2023 – Apr 2024</span>
             </div>
-            <ul class="card-bullets">
+            <ul class="exp-bullets">
               <li>Planned and monitored 2 MV/LV overhead-to-underground network projects across 2 regions under SEC's Unified Contract, using Waterfall methodology from planning through closure.</li>
               <li>Reviewed scope of work and deliverables with SEC and the Project Manager; developed project schedules and work sequencing plans defining execution phases and timelines.</li>
               <li>Prepared progress claims and invoices based on executed works and BOQ items.</li>
               <li>Secured excavation permits and statutory approvals to ensure regulatory compliance before site works.</li>
               <li>Managed resource allocation across 5+ field teams, approving work team forms and controlling project documentation.</li>
             </ul>
-            <div class="tags-group">
-              <span class="tag-item">Project Coordination</span>
-              <span class="tag-item">Waterfall</span>
-              <span class="tag-item">BOQ &amp; Progress Claims</span>
-              <span class="tag-item">Permits &amp; Approvals</span>
+            <div class="open-tags">
+              <span class="tech-tag">Project Coordination</span>
+              <span class="tech-tag">Waterfall</span>
+              <span class="tech-tag">BOQ Management</span>
+              <span class="tech-tag">Permits &amp; Approvals</span>
             </div>
           </div>
 
-          <div class="dash-card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+          <div class="glass-card">
+            <div class="exp-card-header">
+              <div class="exp-title-group">
+                <div class="exp-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                 <div>
-                  <div class="card-title">Electrical Technician</div>
-                  <div class="card-subtitle">Alamjad Engineering Consultants</div>
+                  <div class="exp-title">Electrical Technician</div>
+                  <div class="exp-company">Alamjad Engineering Consultants</div>
                 </div>
               </div>
-              <span class="card-badge">Aug 2022 – May 2023</span>
+              <span class="sci-badge">Aug 2022 – May 2023</span>
             </div>
-            <ul class="card-bullets">
+            <ul class="exp-bullets">
               <li>Executed electrical works per approved drawings and specifications in compliance with the Saudi Building Code (SBC), at commercial and industrial sites including Al-Haram Plaza and Modon.</li>
               <li>Assisted in installation and maintenance of electrical systems, and in fault inspection and troubleshooting under engineers' supervision.</li>
             </ul>
-            <div class="tags-group">
-              <span class="tag-item">Saudi Building Code (SBC)</span>
-              <span class="tag-item">Installation &amp; Maintenance</span>
+            <div class="open-tags">
+              <span class="tech-tag">Saudi Building Code (SBC)</span>
+              <span class="tech-tag">Electrical Installation</span>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- Projects -->
-      <section id="projects" style="scroll-margin-top: 90px;">
-        <h3 class="section-title"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i> Selected Work &amp; Projects</h3>
-        <div class="two-grid">
-          <div class="dash-card">
-            <div class="card-title-group" style="margin-bottom:0.8rem">
-              <div class="card-icon gold"><i class="fa-solid fa-toggle-off" aria-hidden="true"></i></div>
-              <div class="card-title">Switching Programs for Planned Outages</div>
+      <!-- Projects Section -->
+      <section id="projects" class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-helmet-safety"></i> Selected Work &amp; Engineering Projects</h3>
+        <div class="grid-2col">
+          <div class="glass-card">
+            <div class="exp-title-group" style="margin-bottom:0.8rem">
+              <div class="exp-icon" style="background: rgba(250, 204, 21, 0.1); color: var(--gold);"><i class="fa-solid fa-toggle-off"></i></div>
+              <div class="exp-title">Switching Programs for Planned Outages</div>
             </div>
-            <p class="card-text">Isolation, restoration and load-transfer sequences that let maintenance go ahead while customers stay supplied. Each program is validated against feeder SLDs and approved with the Network Control Center.</p>
+            <p class="hero-desc" style="font-size: 0.9rem;">Isolation, restoration and load-transfer sequences that let maintenance go ahead while customers stay supplied. Each program is validated against feeder SLDs and approved with the Network Control Center.</p>
           </div>
-          <div class="dash-card">
-            <div class="card-title-group" style="margin-bottom:0.8rem">
-              <div class="card-icon gold"><i class="fa-solid fa-route" aria-hidden="true"></i></div>
-              <div class="card-title">Overhead-to-Underground Network Conversion</div>
+          <div class="glass-card">
+            <div class="exp-title-group" style="margin-bottom:0.8rem">
+              <div class="exp-icon" style="background: rgba(250, 204, 21, 0.1); color: var(--gold);"><i class="fa-solid fa-route"></i></div>
+              <div class="exp-title">Overhead-to-Underground Network Conversion</div>
             </div>
-            <p class="card-text">Two MV/LV projects in two regions under SEC's Unified Contract, coordinated from planning to closure: schedules, permits, BOQ-based progress claims and 5+ field teams.</p>
+            <p class="hero-desc" style="font-size: 0.9rem;">Two MV/LV projects in two regions under SEC's Unified Contract, coordinated from planning to closure: schedules, permits, BOQ-based progress claims and 5+ field teams.</p>
           </div>
         </div>
       </section>
 
-      <!-- Credentials -->
-      <section id="credentials" style="scroll-margin-top: 90px;">
-        <h3 class="section-title"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Professional Certifications</h3>
-        <div class="two-grid">
-          <div class="dash-card">
-            <div class="card-title-group" style="margin-bottom:0.9rem">
-              <div class="card-icon green"><i class="fa-solid fa-list-check" aria-hidden="true"></i></div>
+      <!-- Certifications Section -->
+      <section id="credentials" class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-certificate"></i> Professional Certifications</h3>
+        <div class="grid-2col">
+          <div class="glass-card">
+            <div class="exp-title-group" style="margin-bottom:0.9rem">
+              <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-list-check"></i></div>
               <div>
-                <div class="card-title">PMP® Certification</div>
-                <div class="card-subtitle">Project Management Professional</div>
+                <div class="exp-title">PMP® Certification</div>
+                <div class="exp-company">Project Management Professional</div>
               </div>
             </div>
-            <dl class="cred-rows">
+            <dl class="cred-rows-sci">
               <dt>Issued by</dt><dd>Project Management Institute (PMI)</dd>
               <dt>Certification No.</dt><dd>4337782</dd>
               <dt>Valid</dt><dd>Apr 2026 – Apr 2029</dd>
             </dl>
-            <a class="verify-link" href="https://www.pmi.org/certifications/certification-resources/registry" target="_blank" rel="noopener"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Verify on the PMI Certification Registry</a>
+            <a class="verify-btn-sci" href="https://www.pmi.org/certifications/certification-resources/registry" target="_blank" rel="noopener"><i class="fa-solid fa-circle-check"></i> Verify on PMI Registry</a>
           </div>
-          <div class="dash-card">
-            <div class="card-title-group" style="margin-bottom:0.9rem">
-              <div class="card-icon green"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div>
+          <div class="glass-card">
+            <div class="exp-title-group" style="margin-bottom:0.9rem">
+              <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-user-tie"></i></div>
               <div>
-                <div class="card-title">Professional Classification</div>
-                <div class="card-subtitle">Saudi Council of Engineers</div>
+                <div class="exp-title">Professional Classification</div>
+                <div class="exp-company">Saudi Council of Engineers</div>
               </div>
             </div>
-            <dl class="cred-rows">
+            <dl class="cred-rows-sci">
               <dt>Issued by</dt><dd>Saudi Council of Engineers (SCE)</dd>
               <dt>Membership No.</dt><dd>827761</dd>
             </dl>
@@ -537,68 +594,82 @@
         </div>
       </section>
 
-      <!-- Education -->
-      <section id="education" style="scroll-margin-top: 90px;">
-        <h3 class="section-title"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Education</h3>
-        <div class="cards-grid">
-          <div class="dash-card">
-            <div class="card-header" style="margin-bottom:0">
-              <div class="card-title-group">
-                <div class="card-icon green"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+      <!-- Education Section -->
+      <section id="education" class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+        <div class="stack-list">
+          <div class="glass-card" style="padding: 1.5rem 2rem;">
+            <div class="exp-card-header" style="margin-bottom:0">
+              <div class="exp-title-group">
+                <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-microchip"></i></div>
                 <div>
-                  <div class="card-title">Bachelor of Applied Engineering – Electrical Engineering</div>
-                  <div class="card-subtitle">Technical College (TVTC)</div>
+                  <div class="exp-title">Bachelor of Applied Engineering – Electrical Engineering</div>
+                  <div class="exp-company">Technical College (TVTC)</div>
                 </div>
               </div>
-              <span class="card-badge">2023 | GPA 3.75 / 5 (Very Good)</span>
+              <span class="sci-badge">2023 | GPA 3.75 / 5 (Very Good)</span>
             </div>
           </div>
-          <div class="dash-card">
-            <div class="card-header" style="margin-bottom:0">
-              <div class="card-title-group">
-                <div class="card-icon green"><i class="fa-solid fa-gears" aria-hidden="true"></i></div>
+          <div class="glass-card" style="padding: 1.5rem 2rem;">
+            <div class="exp-card-header" style="margin-bottom:0">
+              <div class="exp-title-group">
+                <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-gears"></i></div>
                 <div>
-                  <div class="card-title">Diploma in Electrical Technology</div>
-                  <div class="card-subtitle">Electrical Machines &amp; Equipment, Technical College (TVTC)</div>
+                  <div class="exp-title">Diploma in Electrical Technology</div>
+                  <div class="exp-company">Electrical Machines &amp; Equipment, Technical College (TVTC)</div>
                 </div>
               </div>
-              <span class="card-badge">2021 | GPA 4.48 / 5</span>
+              <span class="sci-badge">2021 | GPA 4.48 / 5</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Courses -->
-      <h3 class="section-title"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i> Training Courses</h3>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></div>
-          <div><div class="name">PMP® Preparation Course (35 PDUs)</div><div class="meta">PM TRICKS, 2026</div></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-plug-circle-bolt" aria-hidden="true"></i></div>
-          <div><div class="name">Electrical Connection Systems Testing and Hazards</div><div class="meta">Royal Commission for Jubail &amp; Yanbu, 2024</div></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-          <div><div class="name">Occupational Health &amp; Safety (NEBOSH IGC Standards)</div><div class="meta">Top Developed Institute for Training, 2023</div></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
-          <div><div class="name">Electrical Fault Analysis and Protection Systems</div></div>
-        </div>
-      </div>
-
-      <!-- Skills -->
-      <section id="skills" style="scroll-margin-top: 90px;">
-        <h3 class="section-title"><i class="fa-solid fa-toolbox" aria-hidden="true"></i> Skills</h3>
-        <div class="two-grid">
-          <div class="dash-card">
-            <div class="card-title-group" style="margin-bottom:0.9rem">
-              <div class="card-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-              <div class="card-title">Technical Skills</div>
+      <!-- Training Courses -->
+      <section class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-chalkboard-user"></i> Training Courses</h3>
+        <div class="skills-sci-grid">
+          <div class="skill-sci-card">
+            <div class="skill-sci-icon"><i class="fa-solid fa-list-check"></i></div>
+            <div>
+              <div class="skill-sci-name">PMP® Preparation Course (35 PDUs)</div>
+              <div class="skill-sci-meta">PM TRICKS, 2026</div>
             </div>
-            <ul class="skill-list">
+          </div>
+          <div class="skill-sci-card">
+            <div class="skill-sci-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+            <div>
+              <div class="skill-sci-name">Electrical Connection Systems Testing</div>
+              <div class="skill-sci-meta">Royal Commission for Jubail &amp; Yanbu, 2024</div>
+            </div>
+          </div>
+          <div class="skill-sci-card">
+            <div class="skill-sci-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <div class="skill-sci-name">Occupational Health &amp; Safety (NEBOSH)</div>
+              <div class="skill-sci-meta">Top Developed Institute, 2023</div>
+            </div>
+          </div>
+          <div class="skill-sci-card">
+            <div class="skill-sci-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div>
+              <div class="skill-sci-name">Electrical Fault Analysis &amp; Protection</div>
+              <div class="skill-sci-meta">Specialized Technical Training</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-toolbox"></i> Professional Skills</h3>
+        <div class="grid-2col">
+          <div class="glass-card">
+            <div class="exp-title-group" style="margin-bottom:0.9rem">
+              <div class="exp-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="exp-title">Technical Skills</div>
+            </div>
+            <ul class="tags-cloud">
               <li>Preventive &amp; Corrective Maintenance</li>
               <li>Outage Planning &amp; Switching Programs</li>
               <li>Fault Analysis &amp; Root Cause Analysis</li>
@@ -609,26 +680,60 @@
               <li>SAP, SCADA &amp; Microsoft Office</li>
             </ul>
           </div>
-          <div class="dash-card">
-            <div class="card-title-group" style="margin-bottom:0.9rem">
-              <div class="card-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
-              <div class="card-title">Personal Skills</div>
+          <div class="glass-card">
+            <div class="exp-title-group" style="margin-bottom:0.9rem">
+              <div class="exp-icon"><i class="fa-solid fa-people-group"></i></div>
+              <div class="exp-title">Personal Skills &amp; Languages</div>
             </div>
-            <ul class="skill-list soft">
+            <ul class="tags-cloud soft">
               <li>Leadership &amp; Teamwork</li>
               <li>Problem Solving &amp; Decision Making</li>
               <li>Time Management under Pressure</li>
               <li>Attention to Detail</li>
               <li>Effective Communication</li>
+              <li>Arabic (Native)</li>
+              <li>English (Professional)</li>
             </ul>
-            <div class="lang-row"><i class="fa-solid fa-language" aria-hidden="true"></i> Languages: <span class="tag-item">Arabic</span><span class="tag-item">English</span></div>
           </div>
         </div>
       </section>
 
-      <p class="footer">© 2026 Tariq Khawaji. All rights reserved.</p>
+      <p class="sci-footer">© 2026 Tariq Khawaji. Engineered for Future Networks.</p>
     </main>
+
   </div>
+
+  <!-- GSAP & ScrollTrigger Assembly Animation Script -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Sidebar smooth entry animation on load
+    gsap.from(".sci-sidebar", {
+      duration: 1.2,
+      x: -50,
+      opacity: 0,
+      ease: "power3.out"
+    });
+
+    // Particle / Fly-in Scroll Assembly Effect for sections
+    const assemblyItems = document.querySelectorAll(".assembly-item");
+    
+    assemblyItems.forEach((item, index) => {
+      gsap.from(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        },
+        duration: 1,
+        y: 60,
+        scale: 0.97,
+        opacity: 0,
+        ease: "power3.out",
+        delay: 0.1 * (index % 2)
+      });
+    });
+  </script>
 
 </body>
 </html>
