@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tariq Khawaji | Futuristic Portfolio & Dashboard</title>
-  <meta name="description" content="PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks, futuristic interactive portfolio.">
+  <title>Tariq Khawaji | Electrical Engineer, PMP®</title>
+  <meta name="description" content="Tariq Khawaji, PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks: maintenance planning, switching programs and project coordination.">
   <meta name="theme-color" content="#030712">
   <!-- Google Fonts: Tajawal & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,8 +28,8 @@
       --green: #4ade80;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --glow: 0 0 25px rgba(56, 189, 248, 0.15);
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --glow: none;
+      --transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,7 +73,7 @@
       gap: 0.6rem;
       letter-spacing: -0.01em;
     }
-    .brand-sci i { color: var(--gold); text-shadow: 0 0 10px var(--gold); }
+    .brand-sci i { color: var(--gold); }
     .brand-sci span { color: var(--primary); }
 
     .nav-items { display: flex; gap: 1.8rem; list-style: none; }
@@ -84,7 +84,7 @@
       font-weight: 600;
       transition: var(--transition);
     }
-    .nav-items a:hover { color: var(--primary); text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+    .nav-items a:hover { color: var(--primary); }
 
     /* Main Container Layout */
     .sci-container {
@@ -112,24 +112,17 @@
     .profile-hud { text-align: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 
     .hud-avatar {
-      width: 100px; height: 100px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
+      width: 88px; height: 88px;
+      background: #0b1220;
+      border: 1px solid var(--border-neon-hover);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1.2rem;
-      font-size: 2.6rem;
-      color: #fff;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
-      position: relative;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--primary);
     }
-    .hud-avatar::after {
-      content: '';
-      position: absolute; inset: -4px;
-      border: 2px dashed var(--primary);
-      border-radius: 50%;
-      animation: spin 15s linear infinite;
-    }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
 
     .profile-hud h1 { font-size: 1.45rem; font-weight: 800; color: #fff; }
     .profile-hud .role { font-size: 0.88rem; color: var(--primary); margin-top: 0.3rem; font-weight: 600; }
@@ -177,12 +170,12 @@
       cursor: pointer;
     }
     .btn-primary-sci {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+      background: var(--primary);
+      color: #030712;
       border: none;
     }
-    .btn-primary-sci:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5); }
+    .btn-primary-sci:hover { background: #7dd3fc; }
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
     .btn-secondary-sci {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -205,17 +198,7 @@
       position: relative;
       overflow: hidden;
     }
-    .glass-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      opacity: 0.5;
-    }
-    .glass-card:hover {
-      border-color: var(--border-neon-hover);
-      box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
-      transform: translateY(-3px);
-    }
+    .glass-card:hover { border-color: var(--border-neon-hover); }
 
     .hero-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.7rem; color: #fff; }
     .hero-title i { color: var(--gold); }
@@ -250,7 +233,7 @@
       box-shadow: var(--glow);
       transition: var(--transition);
     }
-    .kpi-sci-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .kpi-sci-card:hover { border-color: var(--border-neon-hover); }
     .kpi-icon-box {
       width: 42px; height: 42px; border-radius: 10px;
       background: rgba(56, 189, 248, 0.1);
@@ -299,7 +282,7 @@
     .cred-rows-sci dd { font-weight: 700; color: #fff; }
     
     .verify-btn-sci { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; font-size: 0.85rem; font-weight: 700; color: var(--primary); text-decoration: none; transition: var(--transition); }
-    .verify-btn-sci:hover { color: #fff; text-shadow: 0 0 10px var(--primary); }
+    .verify-btn-sci:hover { color: #fff; }
 
     /* Training & Skills Grid */
     .skills-sci-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
@@ -313,7 +296,7 @@
       box-shadow: var(--glow);
       transition: var(--transition);
     }
-    .skill-sci-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+    .skill-sci-card:hover { border-color: var(--border-neon-hover); }
     .skill-sci-icon {
       width: 42px; height: 42px; border-radius: 10px;
       background: rgba(74, 222, 128, 0.1);
@@ -334,9 +317,16 @@
       border-radius: 8px;
       transition: var(--transition);
     }
-    .tags-cloud li:hover { background: var(--primary); color: #030712; box-shadow: 0 0 15px var(--primary); }
     .tags-cloud.soft li { background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.08); color: var(--text-main); }
-    .tags-cloud.soft li:hover { background: #fff; color: #030712; box-shadow: 0 0 15px #fff; }
+
+    /* Electrical Simplified channel card */
+    .channel-card { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
+    .channel-kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .channel-name { font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.35rem 0 0.6rem; }
+    .channel-path { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+    .channel-path span { border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 0.25rem 0.6rem; }
+    .channel-path i { font-size: 0.65rem; color: var(--primary); }
+    .channel-actions { display: flex; flex-direction: column; gap: 0.75rem; min-width: 190px; }
 
     .sci-footer { text-align: center; margin-top: 3.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.5rem; }
 
@@ -350,6 +340,8 @@
       .nav-items { display: none; }
       .grid-2col { grid-template-columns: 1fr; }
       .kpi-sci-grid { grid-template-columns: 1fr; }
+      .channel-card { grid-template-columns: 1fr; }
+      .channel-actions { min-width: 0; }
       .sci-container { padding: 0 1rem; margin-top: 80px; }
     }
   </style>
@@ -363,6 +355,7 @@
       <li><a href="#summary">Summary</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#channel">Channel</a></li>
       <li><a href="#credentials">Certifications</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -375,9 +368,7 @@
     <!-- Sci-Fi Sidebar Panel -->
     <aside class="sci-sidebar">
       <div class="profile-hud">
-        <div class="hud-avatar">
-          <i class="fa-solid fa-user-gear"></i>
-        </div>
+        <div class="hud-avatar" aria-hidden="true">TK</div>
         <h1>Tariq Khawaji</h1>
         <p class="role">Electrical Engineer | PMP®</p>
         <p class="sub-role">MV/LV Distribution Networks</p>
@@ -386,7 +377,6 @@
       <p class="hud-section-title">Communication</p>
       <div class="contact-hud">
         <a class="contact-link" href="mailto:tarqkhwajy50@gmail.com"><i class="fa-solid fa-envelope"></i><span>tarqkhwajy50@gmail.com</span></a>
-        <a class="contact-link" href="tel:+966530605226"><i class="fa-solid fa-phone"></i><span>0530605226</span></a>
         <div class="contact-link"><i class="fa-solid fa-location-dot"></i><span>Saudi Arabia</span></div>
       </div>
 
@@ -406,9 +396,17 @@
         <a href="https://drive.google.com/file/d/1NSpiySoVOFG7P4ECps94Uzwl4LAIHicz/view" target="_blank" rel="noopener" class="btn-sci btn-primary-sci">
           <i class="fa-solid fa-file-pdf"></i> View CV (PDF)
         </a>
-        <a href="https://www.linkedin.com/in/tariq-khawaji-11a301263" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
+        <a href="https://www.linkedin.com/in/tariq-khawaji-eng" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
           <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
         </a>
+        <div class="btn-row">
+          <a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
+            <i class="fa-brands fa-youtube"></i> YouTube
+          </a>
+          <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
+            <i class="fa-brands fa-tiktok"></i> TikTok
+          </a>
+        </div>
       </div>
     </aside>
 
@@ -559,6 +557,32 @@
         </div>
       </section>
 
+      <!-- Electrical Simplified Channel -->
+      <section id="channel" class="assembly-item">
+        <h3 class="section-sci-title"><i class="fa-solid fa-circle-play"></i> Teaching &amp; Content</h3>
+        <div class="glass-card channel-card">
+          <div>
+            <p class="channel-kicker">Video series</p>
+            <h4 class="channel-name">Electrical Simplified</h4>
+            <p class="hero-desc" style="font-size: 0.92rem;">Short explainer videos on how electricity travels from the power plant to your home, built course-style from the why, to the concept, to the components. Narrated in English with Arabic subtitles.</p>
+            <div class="channel-path" aria-label="Series roadmap">
+              <span>Power Plants</span><i class="fa-solid fa-chevron-right"></i>
+              <span>Transmission</span><i class="fa-solid fa-chevron-right"></i>
+              <span>Substations</span><i class="fa-solid fa-chevron-right"></i>
+              <span>Distribution</span>
+            </div>
+          </div>
+          <div class="channel-actions">
+            <a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener" class="btn-sci btn-primary-sci">
+              <i class="fa-brands fa-youtube"></i> Watch on YouTube
+            </a>
+            <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
+              <i class="fa-brands fa-tiktok"></i> Follow on TikTok
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- Certifications Section -->
       <section id="credentials" class="assembly-item">
         <h3 class="section-sci-title"><i class="fa-solid fa-certificate"></i> Professional Certifications</h3>
@@ -682,15 +706,10 @@
           </div>
           <div class="glass-card">
             <div class="exp-title-group" style="margin-bottom:0.9rem">
-              <div class="exp-icon"><i class="fa-solid fa-people-group"></i></div>
-              <div class="exp-title">Personal Skills &amp; Languages</div>
+              <div class="exp-icon"><i class="fa-solid fa-language"></i></div>
+              <div class="exp-title">Languages</div>
             </div>
             <ul class="tags-cloud soft">
-              <li>Leadership &amp; Teamwork</li>
-              <li>Problem Solving &amp; Decision Making</li>
-              <li>Time Management under Pressure</li>
-              <li>Attention to Detail</li>
-              <li>Effective Communication</li>
               <li>Arabic (Native)</li>
               <li>English (Professional)</li>
             </ul>
@@ -698,7 +717,7 @@
         </div>
       </section>
 
-      <p class="sci-footer">© 2026 Tariq Khawaji. Engineered for Future Networks.</p>
+      <p class="sci-footer">© 2026 Tariq Khawaji</p>
     </main>
 
   </div>
@@ -725,9 +744,8 @@
           start: "top 85%",
           toggleActions: "play none none reverse"
         },
-        duration: 1,
-        y: 60,
-        scale: 0.97,
+        duration: 0.6,
+        y: 24,
         opacity: 0,
         ease: "power3.out",
         delay: 0.1 * (index % 2)
