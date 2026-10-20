@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tariq Khawaji | Electrical Engineer, PMP®</title>
   <meta name="description" content="Tariq Khawaji, PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks: maintenance planning, switching programs and project coordination.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#030712">
   <!-- Google Fonts: Tajawal & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,18 +18,17 @@
   
   <style>
     :root {
-      --bg-core: #ffffff;
-      --bg-panel: #ffffff;
-      --border-neon: #e2e8f0;
-      --border-neon-hover: rgba(3, 105, 161, 0.45);
-      --primary: #0369a1;
+      --bg-core: #030712;
+      --bg-panel: rgba(15, 23, 42, 0.75);
+      --border-neon: rgba(56, 189, 248, 0.2);
+      --border-neon-hover: rgba(56, 189, 248, 0.6);
+      --primary: #38bdf8;
       --accent: #0284c7;
-      --gold: #b45309;
-      --green: #15803d;
-      --text-main: #0f172a;
-      --heading: #0f172a;
-      --text-muted: #475569;
-      --glow: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --gold: #facc15;
+      --green: #4ade80;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --glow: none;
       --transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
     }
 
@@ -43,6 +42,9 @@
       font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 40%);
     }
 
     a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
@@ -52,7 +54,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(3, 7, 18, 0.85);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-neon);
       padding: 1rem 2.5rem;
@@ -64,7 +66,7 @@
     .brand-sci {
       font-weight: 800;
       font-size: 1.2rem;
-      color: var(--heading);
+      color: #fff;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -107,11 +109,11 @@
       box-shadow: var(--glow);
     }
 
-    .profile-hud { text-align: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+    .profile-hud { text-align: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 
     .hud-avatar {
       width: 88px; height: 88px;
-      background: #f0f9ff;
+      background: #0b1220;
       border: 1px solid var(--border-neon-hover);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -122,7 +124,7 @@
       color: var(--primary);
     }
 
-    .profile-hud h1 { font-size: 1.45rem; font-weight: 800; color: var(--heading); }
+    .profile-hud h1 { font-size: 1.45rem; font-weight: 800; color: #fff; }
     .profile-hud .role { font-size: 0.88rem; color: var(--primary); margin-top: 0.3rem; font-weight: 600; }
     .profile-hud .sub-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
 
@@ -131,8 +133,8 @@
     .contact-hud { display: flex; flex-direction: column; gap: 0.75rem; }
     .contact-link {
       display: flex; align-items: center; gap: 0.8rem;
-      background: rgba(15, 23, 42, 0.02);
-      border: 1px solid rgba(15, 23, 42, 0.05);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       padding: 0.65rem 0.8rem;
       border-radius: 10px;
       color: var(--text-muted);
@@ -141,7 +143,7 @@
       transition: var(--transition);
       word-break: break-all;
     }
-    .contact-link:hover { background: rgba(56, 189, 248, 0.08); border-color: var(--primary); color: var(--heading); }
+    .contact-link:hover { background: rgba(56, 189, 248, 0.08); border-color: var(--primary); color: #fff; }
     .contact-link i { color: var(--primary); font-size: 0.95rem; }
 
     .creds-hud { display: flex; flex-direction: column; gap: 0.6rem; }
@@ -154,7 +156,7 @@
     }
     .cred-badge-box i { color: var(--gold); font-size: 1.1rem; }
     .cred-badge-box small { display: block; font-size: 0.7rem; color: var(--text-muted); }
-    .cred-badge-box strong { font-size: 0.85rem; color: var(--heading); }
+    .cred-badge-box strong { font-size: 0.85rem; color: #fff; }
 
     .hud-actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.8rem; }
     .btn-sci {
@@ -169,17 +171,17 @@
     }
     .btn-primary-sci {
       background: var(--primary);
-      color: #ffffff;
+      color: #030712;
       border: none;
     }
-    .btn-primary-sci:hover { background: #075985; }
+    .btn-primary-sci:hover { background: #7dd3fc; }
     .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
     .btn-secondary-sci {
-      background: rgba(15, 23, 42, 0.03);
-      border: 1px solid rgba(15, 23, 42, 0.1);
-      color: var(--heading);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
-    .btn-secondary-sci:hover { background: rgba(15, 23, 42, 0.08); border-color: var(--primary); }
+    .btn-secondary-sci:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--primary); }
 
     /* Main Content Area */
     .sci-content { display: flex; flex-direction: column; gap: 2.5rem; }
@@ -198,7 +200,7 @@
     }
     .glass-card:hover { border-color: var(--border-neon-hover); }
 
-    .hero-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.7rem; color: var(--heading); }
+    .hero-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.7rem; color: #fff; }
     .hero-title i { color: var(--gold); }
     .hero-desc { color: var(--text-muted); line-height: 1.8; font-size: 1rem; }
     
@@ -214,7 +216,7 @@
     }
 
     .section-sci-title {
-      font-size: 1.3rem; font-weight: 800; color: var(--heading);
+      font-size: 1.3rem; font-weight: 800; color: #fff;
       margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem;
       letter-spacing: -0.01em;
     }
@@ -240,7 +242,7 @@
       font-size: 1.1rem;
     }
     .kpi-sci-card.good .kpi-icon-box { background: rgba(74, 222, 128, 0.1); color: var(--green); }
-    .kpi-sci-card b { display: block; font-size: 2.2rem; font-weight: 800; color: var(--heading); margin-top: 0.8rem; line-height: 1; }
+    .kpi-sci-card b { display: block; font-size: 2.2rem; font-weight: 800; color: #fff; margin-top: 0.8rem; line-height: 1; }
     .kpi-sci-card span { display: block; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.4; }
     .kpi-footnote { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.8rem; font-style: italic; }
 
@@ -255,12 +257,12 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.3rem; flex-shrink: 0;
     }
-    .exp-title { font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+    .exp-title { font-size: 1.15rem; font-weight: 700; color: #fff; }
     .exp-company { font-size: 0.92rem; color: var(--primary); font-weight: 600; margin-top: 0.15rem; }
     
     .sci-badge {
-      background: rgba(15, 23, 42, 0.05);
-      border: 1px solid rgba(15, 23, 42, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--text-muted);
       padding: 0.35rem 0.85rem;
       border-radius: 20px;
@@ -277,10 +279,10 @@
 
     .cred-rows-sci { margin-top: 0.8rem; display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1.2rem; font-size: 0.88rem; }
     .cred-rows-sci dt { color: var(--text-muted); }
-    .cred-rows-sci dd { font-weight: 700; color: var(--heading); }
+    .cred-rows-sci dd { font-weight: 700; color: #fff; }
     
     .verify-btn-sci { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; font-size: 0.85rem; font-weight: 700; color: var(--primary); text-decoration: none; transition: var(--transition); }
-    .verify-btn-sci:hover { color: var(--heading); }
+    .verify-btn-sci:hover { color: #fff; }
 
     /* Training & Skills Grid */
     .skills-sci-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
@@ -302,7 +304,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1.1rem; flex-shrink: 0;
     }
-    .skill-sci-name { font-weight: 700; font-size: 0.9rem; color: var(--heading); }
+    .skill-sci-name { font-weight: 700; font-size: 0.9rem; color: #fff; }
     .skill-sci-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
 
     .tags-cloud { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
@@ -315,18 +317,18 @@
       border-radius: 8px;
       transition: var(--transition);
     }
-    .tags-cloud.soft li { background: rgba(15, 23, 42, 0.03); border-color: rgba(15, 23, 42, 0.08); color: var(--text-main); }
+    .tags-cloud.soft li { background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.08); color: var(--text-main); }
 
     /* Electrical Simplified channel card */
     .channel-card { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
     .channel-kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
-    .channel-name { font-size: 1.35rem; font-weight: 800; color: var(--heading); margin: 0.35rem 0 0.6rem; }
+    .channel-name { font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.35rem 0 0.6rem; }
     .channel-path { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
-    .channel-path span { border: 1px solid rgba(15, 23, 42, 0.1); border-radius: 6px; padding: 0.25rem 0.6rem; }
+    .channel-path span { border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 0.25rem 0.6rem; }
     .channel-path i { font-size: 0.65rem; color: var(--primary); }
     .channel-actions { display: flex; flex-direction: column; gap: 0.75rem; min-width: 190px; }
 
-    .sci-footer { text-align: center; margin-top: 3.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid rgba(15, 23, 42, 0.08); padding-top: 1.5rem; }
+    .sci-footer { text-align: center; margin-top: 3.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.5rem; }
 
     /* Responsive Design */
     @media (max-width: 1100px) {
