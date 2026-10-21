@@ -5,753 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tariq Khawaji | Electrical Engineer, PMP®</title>
   <meta name="description" content="Tariq Khawaji, PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks: maintenance planning, switching programs and project coordination.">
-  <meta name="theme-color" content="#030712">
-  <!-- Google Fonts: Tajawal & Plus Jakarta Sans -->
+  <meta name="theme-color" content="#E7ECEE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- GSAP & ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-core: #030712;
-      --bg-panel: rgba(15, 23, 42, 0.75);
-      --border-neon: rgba(56, 189, 248, 0.2);
-      --border-neon-hover: rgba(56, 189, 248, 0.6);
-      --primary: #38bdf8;
-      --accent: #0284c7;
-      --gold: #facc15;
-      --green: #4ade80;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --glow: none;
-      --transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+      --paper: #E7ECEE;
+      --ink: #12202B;
+      --steel: #4A6272;
+      --rule: #A9B8C0;
+      --live: #B86E00;
+      --head: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+      --body: 'Source Serif 4', Georgia, serif;
+      --rail: 3px;
+      --gutter: 44px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      background-color: var(--bg-core);
-      color: var(--text-main);
-      font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 40%);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
+    a { color: var(--ink); text-decoration-color: var(--live); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    a:hover { color: var(--live); }
+    a:focus-visible { outline: 3px solid var(--live); outline-offset: 3px; }
 
-    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* Futuristic Floating Navbar */
-    .nav-sci {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: rgba(3, 7, 18, 0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-neon);
-      padding: 1rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-sci {
-      font-weight: 800;
-      font-size: 1.2rem;
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      letter-spacing: -0.01em;
-    }
-    .brand-sci i { color: var(--gold); }
-    .brand-sci span { color: var(--primary); }
-
-    .nav-items { display: flex; gap: 1.8rem; list-style: none; }
-    .nav-items a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .nav-items a:hover { color: var(--primary); }
-
-    /* Main Container Layout */
-    .sci-container {
-      max-width: 1300px;
-      margin: 100px auto 40px;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 350px 1fr;
-      gap: 2.5rem;
-    }
-
-    /* Sci-Fi Sidebar Panel */
-    .sci-sidebar {
-      background: var(--bg-panel);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-neon);
-      border-radius: 20px;
-      padding: 2.2rem 1.5rem;
-      height: fit-content;
-      position: sticky;
-      top: 95px;
-      box-shadow: var(--glow);
-    }
-
-    .profile-hud { text-align: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-
-    .hud-avatar {
-      width: 88px; height: 88px;
-      background: #0b1220;
-      border: 1px solid var(--border-neon-hover);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.2rem;
-      font-size: 1.7rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--primary);
-    }
-
-    .profile-hud h1 { font-size: 1.45rem; font-weight: 800; color: #fff; }
-    .profile-hud .role { font-size: 0.88rem; color: var(--primary); margin-top: 0.3rem; font-weight: 600; }
-    .profile-hud .sub-role { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
-
-    .hud-section-title { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 1.5rem 0 0.8rem; }
-
-    .contact-hud { display: flex; flex-direction: column; gap: 0.75rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: 0.8rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 0.65rem 0.8rem;
-      border-radius: 10px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.82rem;
-      transition: var(--transition);
-      word-break: break-all;
-    }
-    .contact-link:hover { background: rgba(56, 189, 248, 0.08); border-color: var(--primary); color: #fff; }
-    .contact-link i { color: var(--primary); font-size: 0.95rem; }
-
-    .creds-hud { display: flex; flex-direction: column; gap: 0.6rem; }
-    .cred-badge-box {
-      background: rgba(250, 204, 21, 0.04);
-      border: 1px solid rgba(250, 204, 21, 0.15);
-      border-radius: 10px;
-      padding: 0.6rem 0.8rem;
-      display: flex; align-items: center; gap: 0.8rem;
-    }
-    .cred-badge-box i { color: var(--gold); font-size: 1.1rem; }
-    .cred-badge-box small { display: block; font-size: 0.7rem; color: var(--text-muted); }
-    .cred-badge-box strong { font-size: 0.85rem; color: #fff; }
-
-    .hud-actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.8rem; }
-    .btn-sci {
-      padding: 0.8rem 1rem;
-      border-radius: 10px;
+    /* Hero */
+    .hero { padding-block: 4.5rem 1rem; }
+    .hero h1 {
+      font-family: var(--head);
       font-weight: 700;
-      font-size: 0.85rem;
-      text-decoration: none;
-      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
-      transition: var(--transition);
-      cursor: pointer;
+      font-size: clamp(3.2rem, 9vw, 6.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.015em;
     }
-    .btn-primary-sci {
-      background: var(--primary);
-      color: #030712;
-      border: none;
+    .hero .role {
+      font-family: var(--head);
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+      color: var(--steel);
+      margin-top: 0.9rem;
     }
-    .btn-primary-sci:hover { background: #7dd3fc; }
-    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .btn-secondary-sci {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
-    .btn-secondary-sci:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--primary); }
+    .hero .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; margin-top: 1.6rem; font-family: var(--head); font-weight: 600; font-size: 1.05rem; }
+    .hero .links a.primary { background: var(--ink); color: var(--paper); text-decoration: none; padding: 0.35rem 1rem; border-radius: 2px; }
+    .hero .links a.primary:hover { background: var(--live); color: #fff; }
 
-    /* Main Content Area */
-    .sci-content { display: flex; flex-direction: column; gap: 2.5rem; }
+    /* Single-line diagram */
+    .sld-wrap { margin-top: 2.6rem; border-top: 1px solid var(--rule); padding: 1.2rem 0 0; }
+    .sld { width: 100%; height: auto; display: block; overflow: visible; }
+    .sld .bus { stroke: var(--ink); stroke-width: 6; stroke-linecap: butt; }
+    .sld .ln { stroke: var(--ink); stroke-width: 2; fill: none; }
+    .sld .ln.live { stroke: var(--live); stroke-dasharray: 1; stroke-dashoffset: 0; }
+    .sld .ln.dash { stroke: var(--steel); stroke-dasharray: 4 4; }
+    .sld .ln.end { stroke: var(--steel); }
+    .sld .brk { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+    .sld .brk.closed { fill: var(--ink); }
+    .sld .lbl { font-family: var(--head); font-weight: 500; font-size: 15px; fill: var(--steel); }
+    @media (prefers-reduced-motion: no-preference) {
+      .sld .feeder .ln.live { stroke-dashoffset: 1; animation: energize 0.7s ease-out forwards; animation-delay: calc(0.25s + var(--i) * 0.045s); }
+      @keyframes energize { to { stroke-dashoffset: 0; } }
+    }
 
-    /* Sci-Fi Glass Card (Generic Assembly Item) */
-    .glass-card {
-      background: var(--bg-panel);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-neon);
-      border-radius: 20px;
-      padding: 2.2rem;
-      box-shadow: var(--glow);
-      transition: var(--transition);
+    .sld-cap { font-size: 0.92rem; color: var(--steel); margin: 0.4rem 0 1rem; }
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--rule); }
+    .facts div { padding: 1rem 1.2rem 1.1rem 0; }
+    .facts div + div { padding-left: 1.2rem; border-left: 1px solid var(--rule); }
+    .facts b { display: block; font-family: var(--head); font-weight: 700; font-size: 2rem; line-height: 1; }
+    .facts span { display: block; font-size: 0.92rem; color: var(--steel); margin-top: 0.35rem; line-height: 1.4; }
+    .facts-note { font-size: 0.9rem; color: var(--steel); font-style: italic; margin-top: 0.7rem; }
+
+    /* Rail */
+    main { margin: 3.5rem 0 3rem; position: relative; padding-left: var(--gutter); border-left: var(--rail) solid var(--ink); }
+    section { position: relative; padding-bottom: 3.2rem; max-width: 720px; }
+    section > h2 {
+      font-family: var(--head);
+      font-weight: 700;
+      font-size: 1.9rem;
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
       position: relative;
-      overflow: hidden;
     }
-    .glass-card:hover { border-color: var(--border-neon-hover); }
-
-    .hero-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.7rem; color: #fff; }
-    .hero-title i { color: var(--gold); }
-    .hero-desc { color: var(--text-muted); line-height: 1.8; font-size: 1rem; }
-    
-    .open-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
-    .tech-tag {
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      color: var(--primary);
-      padding: 0.35rem 0.85rem;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
+    section > h2::before {
+      content: ""; position: absolute; left: calc(var(--gutter) * -1); top: 0.5em; width: calc(var(--gutter) - 24px); height: 2px; background: var(--ink);
     }
-
-    .section-sci-title {
-      font-size: 1.3rem; font-weight: 800; color: #fff;
-      margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem;
-      letter-spacing: -0.01em;
+    section > h2::after {
+      content: ""; position: absolute; left: -24px; top: calc(0.5em - 5px); width: 12px; height: 12px; background: var(--ink);
     }
-    .section-sci-title i { color: var(--primary); }
+    section.live > h2::after { background: var(--live); }
+    p + p { margin-top: 0.9rem; }
 
-    /* KPIs Grid */
-    .kpi-sci-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
-    .kpi-sci-card {
-      background: var(--bg-panel);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-neon);
-      border-radius: 16px;
-      padding: 1.4rem;
-      box-shadow: var(--glow);
-      transition: var(--transition);
-    }
-    .kpi-sci-card:hover { border-color: var(--border-neon-hover); }
-    .kpi-icon-box {
-      width: 42px; height: 42px; border-radius: 10px;
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--primary);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-    }
-    .kpi-sci-card.good .kpi-icon-box { background: rgba(74, 222, 128, 0.1); color: var(--green); }
-    .kpi-sci-card b { display: block; font-size: 2.2rem; font-weight: 800; color: #fff; margin-top: 0.8rem; line-height: 1; }
-    .kpi-sci-card span { display: block; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.4; }
-    .kpi-footnote { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.8rem; font-style: italic; }
+    .open-to { margin-top: 1rem; font-family: var(--head); font-weight: 600; font-size: 1.1rem; }
+    .open-to span { color: var(--steel); font-weight: 500; }
 
-    /* Experience & Cards Stack */
-    .stack-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .exp-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
-    .exp-title-group { display: flex; align-items: center; gap: 1rem; }
-    .exp-icon {
-      width: 50px; height: 50px; border-radius: 12px;
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--primary);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; flex-shrink: 0;
-    }
-    .exp-title { font-size: 1.15rem; font-weight: 700; color: #fff; }
-    .exp-company { font-size: 0.92rem; color: var(--primary); font-weight: 600; margin-top: 0.15rem; }
-    
-    .sci-badge {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-muted);
-      padding: 0.35rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.8rem; font-weight: 600;
-    }
-    .sci-badge.active { background: rgba(74, 222, 128, 0.1); border-color: rgba(74, 222, 128, 0.3); color: var(--green); }
+    /* Jobs */
+    .job { padding: 0 0 2rem 1.3rem; border-left: 2px solid var(--rule); margin-left: 0; position: relative; }
+    .job:last-child { padding-bottom: 0; }
+    .job::before { content: ""; position: absolute; left: -7px; top: 0.55rem; width: 12px; height: 12px; background: var(--paper); border: 2px solid var(--ink); }
+    .job.now { border-left-color: var(--live); }
+    .job.now::before { background: var(--live); border-color: var(--live); }
+    .job h3 { font-family: var(--head); font-weight: 600; font-size: 1.3rem; line-height: 1.25; }
+    .job .where { color: var(--steel); font-family: var(--head); font-weight: 500; font-size: 1.02rem; margin-bottom: 0.7rem; }
+    .job ul { list-style: none; display: grid; gap: 0.55rem; }
+    .job li { position: relative; padding-left: 1.1rem; font-size: 1rem; line-height: 1.55; }
+    .job li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 2px; background: var(--steel); }
 
-    .exp-bullets { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
-    .exp-bullets li { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; position: relative; padding-left: 1.2rem; }
-    .exp-bullets li::before { content: "▹"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+    /* Work, content */
+    dl.work dt { font-family: var(--head); font-weight: 600; font-size: 1.2rem; margin-top: 1.3rem; }
+    dl.work dt:first-child { margin-top: 0; }
+    dl.work dd { margin-top: 0.25rem; }
 
-    /* Two Columns Grid */
-    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .series-path { margin-top: 0.9rem; font-family: var(--head); font-weight: 500; color: var(--steel); }
+    .series-links { margin-top: 1rem; display: flex; gap: 1.6rem; font-family: var(--head); font-weight: 600; }
 
-    .cred-rows-sci { margin-top: 0.8rem; display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1.2rem; font-size: 0.88rem; }
-    .cred-rows-sci dt { color: var(--text-muted); }
-    .cred-rows-sci dd { font-weight: 700; color: #fff; }
-    
-    .verify-btn-sci { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; font-size: 0.85rem; font-weight: 700; color: var(--primary); text-decoration: none; transition: var(--transition); }
-    .verify-btn-sci:hover { color: #fff; }
+    /* Title block */
+    .titleblock { width: 100%; max-width: 640px; border: 2px solid var(--ink); border-collapse: collapse; font-size: 0.98rem; }
+    .titleblock th, .titleblock td { border: 1px solid var(--ink); padding: 0.55rem 0.8rem; text-align: left; vertical-align: top; }
+    .titleblock th { font-family: var(--head); font-weight: 600; background: rgba(18,32,43,0.06); width: 34%; }
+    .titleblock .name td { font-family: var(--head); font-weight: 700; font-size: 1.15rem; border-bottom: 2px solid var(--ink); }
+    .verify { margin-top: 0.9rem; font-family: var(--head); font-weight: 600; }
 
-    /* Training & Skills Grid */
-    .skills-sci-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
-    .skill-sci-card {
-      background: var(--bg-panel);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--border-neon);
-      border-radius: 14px;
-      padding: 1.2rem;
-      display: flex; align-items: center; gap: 1rem;
-      box-shadow: var(--glow);
-      transition: var(--transition);
-    }
-    .skill-sci-card:hover { border-color: var(--border-neon-hover); }
-    .skill-sci-icon {
-      width: 42px; height: 42px; border-radius: 10px;
-      background: rgba(74, 222, 128, 0.1);
-      color: var(--green);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-    .skill-sci-name { font-weight: 700; font-size: 0.9rem; color: #fff; }
-    .skill-sci-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
+    /* Lists */
+    .plain { list-style: none; display: grid; gap: 0.9rem; }
+    .plain strong { font-family: var(--head); font-weight: 600; font-size: 1.12rem; }
+    .plain span { display: block; color: var(--steel); font-size: 0.95rem; }
+    .inline-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem 1.8rem; font-family: var(--head); font-weight: 500; font-size: 1.08rem; }
+    h3.sub { font-family: var(--head); font-weight: 600; font-size: 1.15rem; margin: 1.6rem 0 0.6rem; }
+    h3.sub:first-of-type { margin-top: 0; }
 
-    .tags-cloud { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
-    .tags-cloud li {
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      color: var(--primary);
-      font-size: 0.82rem; font-weight: 600;
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      transition: var(--transition);
-    }
-    .tags-cloud.soft li { background: rgba(255, 255, 255, 0.03); border-color: rgba(255, 255, 255, 0.08); color: var(--text-main); }
+    footer { border-top: 1px solid var(--rule); padding: 1.4rem 0 2.5rem; color: var(--steel); font-size: 0.9rem; font-family: var(--head); }
 
-    /* Electrical Simplified channel card */
-    .channel-card { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
-    .channel-kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
-    .channel-name { font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.35rem 0 0.6rem; }
-    .channel-path { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); }
-    .channel-path span { border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 0.25rem 0.6rem; }
-    .channel-path i { font-size: 0.65rem; color: var(--primary); }
-    .channel-actions { display: flex; flex-direction: column; gap: 0.75rem; min-width: 190px; }
-
-    .sci-footer { text-align: center; margin-top: 3.5rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.5rem; }
-
-    /* Responsive Design */
-    @media (max-width: 1100px) {
-      .sci-container { grid-template-columns: 1fr; }
-      .sci-sidebar { position: relative; top: 0; }
-      .kpi-sci-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .nav-items { display: none; }
-      .grid-2col { grid-template-columns: 1fr; }
-      .kpi-sci-grid { grid-template-columns: 1fr; }
-      .channel-card { grid-template-columns: 1fr; }
-      .channel-actions { min-width: 0; }
-      .sci-container { padding: 0 1rem; margin-top: 80px; }
+    @media (max-width: 760px) {
+      :root { --gutter: 28px; }
+      .hero { padding-top: 2.8rem; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .facts div:nth-child(3) { border-left: 0; padding-left: 0; }
+      .facts div:nth-child(n+3) { border-top: 1px solid var(--rule); }
+      .wrap { padding: 0 1rem; }
+      section > h2 { font-size: 1.6rem; }
+      .sld .lbl { font-size: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Futuristic Navigation Bar -->
-  <nav class="nav-sci">
-    <a href="#" class="brand-sci"><i class="fa-solid fa-bolt"></i> Tariq <span>Khawaji</span></a>
-    <ul class="nav-items">
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#channel">Channel</a></li>
-      <li><a href="#credentials">Certifications</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
+  <header class="wrap hero">
+    <h1>Tariq Khawaji</h1>
+    <p class="role">Electrical Engineer, PMP®. MV/LV distribution networks.</p>
+    <p class="links">
+      <a class="primary" href="https://drive.google.com/file/d/1NSpiySoVOFG7P4ECps94Uzwl4LAIHicz/view" target="_blank" rel="noopener">View CV (PDF)</a>
+      <a href="mailto:tarqkhwajy50@gmail.com">tarqkhwajy50@gmail.com</a>
+      <a href="https://www.linkedin.com/in/tariq-khawaji-eng" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener">TikTok</a>
+    </p>
 
-  <!-- Main Container -->
-  <div class="sci-container">
-
-    <!-- Sci-Fi Sidebar Panel -->
-    <aside class="sci-sidebar">
-      <div class="profile-hud">
-        <div class="hud-avatar" aria-hidden="true">TK</div>
-        <h1>Tariq Khawaji</h1>
-        <p class="role">Electrical Engineer | PMP®</p>
-        <p class="sub-role">MV/LV Distribution Networks</p>
+    <div class="sld-wrap">
+<svg class="sld" viewBox="0 0 1000 215" role="img" aria-labelledby="sld-t sld-d" preserveAspectRatio="xMidYMid meet">
+<title id="sld-t">Single-line diagram of an MV substation</title><desc id="sld-d">A busbar feeding 30 outgoing MV feeders. Four feeders are drawn open, as in a switching program for a planned outage.</desc>
+<g class="incomer"><line x1="30" y1="8" x2="30" y2="62" class="ln"/><rect x="23" y="28" width="14" height="14" class="brk closed"/><text x="46" y="40" class="lbl">Incomer</text></g>
+<line x1="0" y1="64" x2="1000" y2="64" class="bus"/>
+<g class="feeder" style="--i:0"><line x1="70.0" y1="66" x2="70.0" y2="196" class="ln live" pathLength="1"/><rect x="64.0" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="65.0" y1="196" x2="75.0" y2="196" class="ln end"/>
+<g class="feeder" style="--i:1"><line x1="99.7" y1="66" x2="99.7" y2="196" class="ln live" pathLength="1"/><rect x="93.7" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="94.7" y1="196" x2="104.7" y2="196" class="ln end"/>
+<g class="feeder" style="--i:2"><line x1="129.3" y1="66" x2="129.3" y2="196" class="ln live" pathLength="1"/><rect x="123.30000000000001" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="124.30000000000001" y1="196" x2="134.3" y2="196" class="ln end"/>
+<g class="feeder" style="--i:3"><line x1="159.0" y1="66" x2="159.0" y2="196" class="ln live" pathLength="1"/><rect x="153.0" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="154.0" y1="196" x2="164.0" y2="196" class="ln end"/>
+<g class="feeder" style="--i:4"><line x1="188.6" y1="66" x2="188.6" y2="196" class="ln live" pathLength="1"/><rect x="182.6" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="183.6" y1="196" x2="193.6" y2="196" class="ln end"/>
+<g class="feeder" style="--i:5"><line x1="218.3" y1="66" x2="218.3" y2="196" class="ln live" pathLength="1"/><rect x="212.3" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="213.3" y1="196" x2="223.3" y2="196" class="ln end"/>
+<g class="feeder open"><line x1="247.9" y1="66" x2="247.9" y2="104" class="ln dash"/><rect x="241.9" y="108" width="12" height="12" class="brk"/><line x1="247.9" y1="122" x2="247.9" y2="196" class="ln dash"/></g>
+<line x1="242.9" y1="196" x2="252.9" y2="196" class="ln end"/>
+<g class="feeder" style="--i:7"><line x1="277.6" y1="66" x2="277.6" y2="196" class="ln live" pathLength="1"/><rect x="271.6" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="272.6" y1="196" x2="282.6" y2="196" class="ln end"/>
+<g class="feeder" style="--i:8"><line x1="307.2" y1="66" x2="307.2" y2="196" class="ln live" pathLength="1"/><rect x="301.2" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="302.2" y1="196" x2="312.2" y2="196" class="ln end"/>
+<g class="feeder" style="--i:9"><line x1="336.9" y1="66" x2="336.9" y2="196" class="ln live" pathLength="1"/><rect x="330.9" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="331.9" y1="196" x2="341.9" y2="196" class="ln end"/>
+<g class="feeder" style="--i:10"><line x1="366.6" y1="66" x2="366.6" y2="196" class="ln live" pathLength="1"/><rect x="360.6" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="361.6" y1="196" x2="371.6" y2="196" class="ln end"/>
+<g class="feeder" style="--i:11"><line x1="396.2" y1="66" x2="396.2" y2="196" class="ln live" pathLength="1"/><rect x="390.2" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="391.2" y1="196" x2="401.2" y2="196" class="ln end"/>
+<g class="feeder" style="--i:12"><line x1="425.9" y1="66" x2="425.9" y2="196" class="ln live" pathLength="1"/><rect x="419.9" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="420.9" y1="196" x2="430.9" y2="196" class="ln end"/>
+<g class="feeder" style="--i:13"><line x1="455.5" y1="66" x2="455.5" y2="196" class="ln live" pathLength="1"/><rect x="449.5" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="450.5" y1="196" x2="460.5" y2="196" class="ln end"/>
+<g class="feeder open"><line x1="485.2" y1="66" x2="485.2" y2="104" class="ln dash"/><rect x="479.2" y="108" width="12" height="12" class="brk"/><line x1="485.2" y1="122" x2="485.2" y2="196" class="ln dash"/></g>
+<line x1="480.2" y1="196" x2="490.2" y2="196" class="ln end"/>
+<g class="feeder open"><line x1="514.8" y1="66" x2="514.8" y2="104" class="ln dash"/><rect x="508.79999999999995" y="108" width="12" height="12" class="brk"/><line x1="514.8" y1="122" x2="514.8" y2="196" class="ln dash"/></g>
+<line x1="509.79999999999995" y1="196" x2="519.8" y2="196" class="ln end"/>
+<g class="feeder" style="--i:16"><line x1="544.5" y1="66" x2="544.5" y2="196" class="ln live" pathLength="1"/><rect x="538.5" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="539.5" y1="196" x2="549.5" y2="196" class="ln end"/>
+<g class="feeder" style="--i:17"><line x1="574.1" y1="66" x2="574.1" y2="196" class="ln live" pathLength="1"/><rect x="568.1" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="569.1" y1="196" x2="579.1" y2="196" class="ln end"/>
+<g class="feeder" style="--i:18"><line x1="603.8" y1="66" x2="603.8" y2="196" class="ln live" pathLength="1"/><rect x="597.8" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="598.8" y1="196" x2="608.8" y2="196" class="ln end"/>
+<g class="feeder" style="--i:19"><line x1="633.4" y1="66" x2="633.4" y2="196" class="ln live" pathLength="1"/><rect x="627.4" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="628.4" y1="196" x2="638.4" y2="196" class="ln end"/>
+<g class="feeder" style="--i:20"><line x1="663.1" y1="66" x2="663.1" y2="196" class="ln live" pathLength="1"/><rect x="657.1" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="658.1" y1="196" x2="668.1" y2="196" class="ln end"/>
+<g class="feeder" style="--i:21"><line x1="692.8" y1="66" x2="692.8" y2="196" class="ln live" pathLength="1"/><rect x="686.8" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="687.8" y1="196" x2="697.8" y2="196" class="ln end"/>
+<g class="feeder" style="--i:22"><line x1="722.4" y1="66" x2="722.4" y2="196" class="ln live" pathLength="1"/><rect x="716.4" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="717.4" y1="196" x2="727.4" y2="196" class="ln end"/>
+<g class="feeder open"><line x1="752.1" y1="66" x2="752.1" y2="104" class="ln dash"/><rect x="746.1" y="108" width="12" height="12" class="brk"/><line x1="752.1" y1="122" x2="752.1" y2="196" class="ln dash"/></g>
+<line x1="747.1" y1="196" x2="757.1" y2="196" class="ln end"/>
+<g class="feeder" style="--i:24"><line x1="781.7" y1="66" x2="781.7" y2="196" class="ln live" pathLength="1"/><rect x="775.7" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="776.7" y1="196" x2="786.7" y2="196" class="ln end"/>
+<g class="feeder" style="--i:25"><line x1="811.4" y1="66" x2="811.4" y2="196" class="ln live" pathLength="1"/><rect x="805.4" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="806.4" y1="196" x2="816.4" y2="196" class="ln end"/>
+<g class="feeder" style="--i:26"><line x1="841.0" y1="66" x2="841.0" y2="196" class="ln live" pathLength="1"/><rect x="835.0" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="836.0" y1="196" x2="846.0" y2="196" class="ln end"/>
+<g class="feeder" style="--i:27"><line x1="870.7" y1="66" x2="870.7" y2="196" class="ln live" pathLength="1"/><rect x="864.7" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="865.7" y1="196" x2="875.7" y2="196" class="ln end"/>
+<g class="feeder" style="--i:28"><line x1="900.3" y1="66" x2="900.3" y2="196" class="ln live" pathLength="1"/><rect x="894.3" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="895.3" y1="196" x2="905.3" y2="196" class="ln end"/>
+<g class="feeder" style="--i:29"><line x1="930.0" y1="66" x2="930.0" y2="196" class="ln live" pathLength="1"/><rect x="924.0" y="108" width="12" height="12" class="brk closed"/></g>
+<line x1="925.0" y1="196" x2="935.0" y2="196" class="ln end"/>
+</svg>
+      <p class="sld-cap">30 feeders on one bus. Hollow breakers are open for a planned outage; their customers stay supplied through load transfer.</p>
+      <div class="facts">
+        <div><b>30+</b><span>MV feeders under my maintenance planning</span></div>
+        <div><b>20+</b><span>Substations covered</span></div>
+        <div><b>17%</b><span>SAIFI improvement in 2025, against a 1% target</span></div>
+        <div><b>16%</b><span>SAIDI improvement in 2026, against a 1% target</span></div>
       </div>
+    </div>
+    <p class="facts-note">SAIFI and SAIDI are team results that my switching programs and maintenance planning contributed to.</p>
+  </header>
 
-      <p class="hud-section-title">Communication</p>
-      <div class="contact-hud">
-        <a class="contact-link" href="mailto:tarqkhwajy50@gmail.com"><i class="fa-solid fa-envelope"></i><span>tarqkhwajy50@gmail.com</span></a>
-        <div class="contact-link"><i class="fa-solid fa-location-dot"></i><span>Saudi Arabia</span></div>
-      </div>
+  <div class="wrap">
+  <main>
 
-      <p class="hud-section-title">Verified Credentials</p>
-      <div class="creds-hud">
-        <div class="cred-badge-box">
-          <i class="fa-solid fa-award"></i>
-          <div><small>PMP® Certification No.</small><strong>4337782</strong></div>
-        </div>
-        <div class="cred-badge-box">
-          <i class="fa-solid fa-id-card"></i>
-          <div><small>SCE Membership No.</small><strong>827761</strong></div>
-        </div>
-      </div>
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks, combining network maintenance with project coordination. I plan preventive and corrective maintenance for 30+ MV feeders across 20+ substations, prepare Switching Programs for planned outages, and have coordinated overhead-to-underground network projects under SEC's Unified Contract.</p>
+      <p class="open-to">Open to <span>Maintenance Engineer, Project Coordinator and Project Engineer roles.</span></p>
+    </section>
 
-      <div class="hud-actions">
-        <a href="https://drive.google.com/file/d/1NSpiySoVOFG7P4ECps94Uzwl4LAIHicz/view" target="_blank" rel="noopener" class="btn-sci btn-primary-sci">
-          <i class="fa-solid fa-file-pdf"></i> View CV (PDF)
-        </a>
-        <a href="https://www.linkedin.com/in/tariq-khawaji-eng" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
-        </a>
-        <div class="btn-row">
-          <a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
-            <i class="fa-brands fa-youtube"></i> YouTube
-          </a>
-          <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
-            <i class="fa-brands fa-tiktok"></i> TikTok
-          </a>
-        </div>
-      </div>
-    </aside>
+    <section id="experience" class="live">
+      <h2>Experience</h2>
 
-    <!-- Content Stack (Assembly Target) -->
-    <main class="sci-content">
+      <article class="job now">
+        <h3>Distribution Network Engineer</h3>
+        <p class="where">Saudi Energy Company, May 2024 to present</p>
+        <ul>
+          <li>Plan and prioritize preventive and corrective maintenance across 30+ MV feeders in 20+ substations, defining scope of work and execution sequence for each activity.</li>
+          <li>Develop Switching Programs for planned outages, defining isolation, restoration, and load-transfer sequences that keep customers supplied, contributing to SAIFI (17%, 2025) and SAIDI (16%, 2026) gains against 1% targets.</li>
+          <li>Coordinate outage approvals and scheduling with the Network Control Center, validating plans against feeder SLDs and network layouts for accuracy and safety compliance.</li>
+          <li>Conduct network inspections, handle emergency faults, and perform Root Cause Analysis to support corrective and preventive actions.</li>
+          <li>Maintain MV/LV distribution transformers and feeders under periodic maintenance plans.</li>
+        </ul>
+      </article>
 
-      <!-- Summary Section -->
-      <section id="summary" class="assembly-item">
-        <div class="glass-card">
-          <h2 class="hero-title"><i class="fa-solid fa-bolt-lightning"></i> Professional Summary</h2>
-          <p class="hero-desc">PMP®-certified Electrical Engineer with 3+ years in MV/LV distribution networks, combining network maintenance with project coordination. I plan preventive and corrective maintenance for 30+ MV feeders across 20+ substations, prepare Switching Programs for planned outages, and have coordinated overhead-to-underground network projects under SEC's Unified Contract.</p>
-          <div class="open-tags">
-            <span class="tech-tag">Open to: Maintenance Engineer</span>
-            <span class="tech-tag">Project Coordinator</span>
-            <span class="tech-tag">Project Engineer</span>
-          </div>
-        </div>
-      </section>
+      <article class="job">
+        <h3>Electrical Engineer, Project Coordination</h3>
+        <p class="where">Dussur Contracting Company, Nov 2023 to Apr 2024</p>
+        <ul>
+          <li>Planned and monitored 2 MV/LV overhead-to-underground network projects across 2 regions under SEC's Unified Contract, using Waterfall methodology from planning through closure.</li>
+          <li>Reviewed scope of work and deliverables with SEC and the Project Manager; developed project schedules and work sequencing plans defining execution phases and timelines.</li>
+          <li>Prepared progress claims and invoices based on executed works and BOQ items.</li>
+          <li>Secured excavation permits and statutory approvals to ensure regulatory compliance before site works.</li>
+          <li>Managed resource allocation across 5+ field teams, approving work team forms and controlling project documentation.</li>
+        </ul>
+      </article>
 
-      <!-- Key Results Section -->
-      <section class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-chart-line"></i> Performance Metrics &amp; Key Results</h3>
-        <div class="kpi-sci-grid">
-          <div class="kpi-sci-card">
-            <div class="kpi-icon-box"><i class="fa-solid fa-network-wired"></i></div>
-            <b>30+</b>
-            <span>MV feeders under maintenance planning</span>
-          </div>
-          <div class="kpi-sci-card">
-            <div class="kpi-icon-box"><i class="fa-solid fa-industry"></i></div>
-            <b>20+</b>
-            <span>Substations covered</span>
-          </div>
-          <div class="kpi-sci-card good">
-            <div class="kpi-icon-box"><i class="fa-solid fa-arrow-trend-down"></i></div>
-            <b>17%</b>
-            <span>SAIFI improvement (2025) vs 1% target</span>
-          </div>
-          <div class="kpi-sci-card good">
-            <div class="kpi-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
-            <b>16%</b>
-            <span>SAIDI improvement (2026) vs 1% target</span>
-          </div>
-        </div>
-        <p class="kpi-footnote">SAIFI and SAIDI are team results that my switching programs and maintenance planning contributed to.</p>
-      </section>
+      <article class="job">
+        <h3>Electrical Technician</h3>
+        <p class="where">Alamjad Engineering Consultants, Aug 2022 to May 2023</p>
+        <ul>
+          <li>Executed electrical works per approved drawings and specifications in compliance with the Saudi Building Code (SBC), at commercial and industrial sites including Al-Haram Plaza and Modon.</li>
+          <li>Assisted in installation and maintenance of electrical systems, and in fault inspection and troubleshooting under engineers' supervision.</li>
+        </ul>
+      </article>
+    </section>
 
-      <!-- Experience Section -->
-      <section id="experience" class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h3>
-        <div class="stack-list">
+    <section id="work">
+      <h2>Selected work</h2>
+      <dl class="work">
+        <dt>Switching Programs for planned outages</dt>
+        <dd>Isolation, restoration and load-transfer sequences that let maintenance go ahead while customers stay supplied. Each program is validated against feeder SLDs and approved with the Network Control Center.</dd>
+        <dt>Overhead-to-underground network conversion</dt>
+        <dd>Two MV/LV projects in two regions under SEC's Unified Contract, coordinated from planning to closure: schedules, permits, BOQ-based progress claims and 5+ field teams.</dd>
+      </dl>
+    </section>
 
-          <div class="glass-card">
-            <div class="exp-card-header">
-              <div class="exp-title-group">
-                <div class="exp-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
-                <div>
-                  <div class="exp-title">Distribution Network Engineer</div>
-                  <div class="exp-company">Saudi Energy Company</div>
-                </div>
-              </div>
-              <span class="sci-badge active">May 2024 – Present</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Plan and prioritize preventive and corrective maintenance across 30+ MV feeders in 20+ substations, defining scope of work and execution sequence for each activity.</li>
-              <li>Develop Switching Programs for planned outages, defining isolation, restoration, and load-transfer sequences that keep customers supplied, contributing to SAIFI (17%, 2025) and SAIDI (16%, 2026) gains against 1% targets.</li>
-              <li>Coordinate outage approvals and scheduling with the Network Control Center, validating plans against feeder SLDs and network layouts for accuracy and safety compliance.</li>
-              <li>Conduct network inspections, handle emergency faults, and perform Root Cause Analysis to support corrective and preventive actions.</li>
-              <li>Maintain MV/LV distribution transformers and feeders under periodic maintenance plans.</li>
-            </ul>
-            <div class="open-tags">
-              <span class="tech-tag">MV/LV Networks</span>
-              <span class="tech-tag">Maintenance Planning</span>
-              <span class="tech-tag">Switching Programs</span>
-              <span class="tech-tag">Root Cause Analysis</span>
-              <span class="tech-tag">SAP &amp; SCADA</span>
-            </div>
-          </div>
+    <section id="channel">
+      <h2>Electrical Simplified</h2>
+      <p>Short explainer videos on how electricity travels from the power plant to your home, built course-style from the why, to the concept, to the components. Narrated in English with Arabic subtitles.</p>
+      <p class="series-path">Power plants, transmission, substations, distribution.</p>
+      <p class="series-links">
+        <a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener">Watch on YouTube</a>
+        <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener">Follow on TikTok</a>
+      </p>
+    </section>
 
-          <div class="glass-card">
-            <div class="exp-card-header">
-              <div class="exp-title-group">
-                <div class="exp-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                <div>
-                  <div class="exp-title">Electrical Engineer (Project Coordination)</div>
-                  <div class="exp-company">Dussur Contracting Company</div>
-                </div>
-              </div>
-              <span class="sci-badge">Nov 2023 – Apr 2024</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Planned and monitored 2 MV/LV overhead-to-underground network projects across 2 regions under SEC's Unified Contract, using Waterfall methodology from planning through closure.</li>
-              <li>Reviewed scope of work and deliverables with SEC and the Project Manager; developed project schedules and work sequencing plans defining execution phases and timelines.</li>
-              <li>Prepared progress claims and invoices based on executed works and BOQ items.</li>
-              <li>Secured excavation permits and statutory approvals to ensure regulatory compliance before site works.</li>
-              <li>Managed resource allocation across 5+ field teams, approving work team forms and controlling project documentation.</li>
-            </ul>
-            <div class="open-tags">
-              <span class="tech-tag">Project Coordination</span>
-              <span class="tech-tag">Waterfall</span>
-              <span class="tech-tag">BOQ Management</span>
-              <span class="tech-tag">Permits &amp; Approvals</span>
-            </div>
-          </div>
+    <section id="credentials">
+      <h2>Certifications</h2>
+      <table class="titleblock">
+        <tbody>
+          <tr class="name"><td colspan="2">Tariq Khawaji</td></tr>
+          <tr><th scope="row">PMP®</th><td>Project Management Institute (PMI)<br>No. 4337782, valid Apr 2026 to Apr 2029</td></tr>
+          <tr><th scope="row">Saudi Council of Engineers</th><td>Professional classification<br>Membership No. 827761</td></tr>
+        </tbody>
+      </table>
+      <p class="verify"><a href="https://www.pmi.org/certifications/certification-resources/registry" target="_blank" rel="noopener">Verify on the PMI Registry</a></p>
+    </section>
 
-          <div class="glass-card">
-            <div class="exp-card-header">
-              <div class="exp-title-group">
-                <div class="exp-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                <div>
-                  <div class="exp-title">Electrical Technician</div>
-                  <div class="exp-company">Alamjad Engineering Consultants</div>
-                </div>
-              </div>
-              <span class="sci-badge">Aug 2022 – May 2023</span>
-            </div>
-            <ul class="exp-bullets">
-              <li>Executed electrical works per approved drawings and specifications in compliance with the Saudi Building Code (SBC), at commercial and industrial sites including Al-Haram Plaza and Modon.</li>
-              <li>Assisted in installation and maintenance of electrical systems, and in fault inspection and troubleshooting under engineers' supervision.</li>
-            </ul>
-            <div class="open-tags">
-              <span class="tech-tag">Saudi Building Code (SBC)</span>
-              <span class="tech-tag">Electrical Installation</span>
-            </div>
-          </div>
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="plain">
+        <li><strong>Bachelor of Applied Engineering, Electrical Engineering</strong><span>Technical College (TVTC), 2023. GPA 3.75 / 5 (Very Good)</span></li>
+        <li><strong>Diploma in Electrical Technology</strong><span>Electrical Machines &amp; Equipment, Technical College (TVTC), 2021. GPA 4.48 / 5</span></li>
+      </ul>
+    </section>
 
-        </div>
-      </section>
+    <section id="courses">
+      <h2>Training courses</h2>
+      <ul class="plain">
+        <li><strong>PMP® Preparation Course (35 PDUs)</strong><span>PM TRICKS, 2026</span></li>
+        <li><strong>Electrical Connection Systems Testing</strong><span>Royal Commission for Jubail &amp; Yanbu, 2024</span></li>
+        <li><strong>Occupational Health &amp; Safety (NEBOSH IGC)</strong><span>Top Developed Institute for Training, 2023</span></li>
+        <li><strong>Electrical Fault Analysis &amp; Protection Systems</strong><span>Specialized technical training</span></li>
+      </ul>
+    </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-helmet-safety"></i> Selected Work &amp; Engineering Projects</h3>
-        <div class="grid-2col">
-          <div class="glass-card">
-            <div class="exp-title-group" style="margin-bottom:0.8rem">
-              <div class="exp-icon" style="background: rgba(250, 204, 21, 0.1); color: var(--gold);"><i class="fa-solid fa-toggle-off"></i></div>
-              <div class="exp-title">Switching Programs for Planned Outages</div>
-            </div>
-            <p class="hero-desc" style="font-size: 0.9rem;">Isolation, restoration and load-transfer sequences that let maintenance go ahead while customers stay supplied. Each program is validated against feeder SLDs and approved with the Network Control Center.</p>
-          </div>
-          <div class="glass-card">
-            <div class="exp-title-group" style="margin-bottom:0.8rem">
-              <div class="exp-icon" style="background: rgba(250, 204, 21, 0.1); color: var(--gold);"><i class="fa-solid fa-route"></i></div>
-              <div class="exp-title">Overhead-to-Underground Network Conversion</div>
-            </div>
-            <p class="hero-desc" style="font-size: 0.9rem;">Two MV/LV projects in two regions under SEC's Unified Contract, coordinated from planning to closure: schedules, permits, BOQ-based progress claims and 5+ field teams.</p>
-          </div>
-        </div>
-      </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <h3 class="sub">Technical</h3>
+      <ul class="inline-list">
+        <li>Preventive &amp; corrective maintenance</li>
+        <li>Outage planning &amp; Switching Programs</li>
+        <li>Fault analysis &amp; Root Cause Analysis</li>
+        <li>MV/LV distribution networks</li>
+        <li>Project planning &amp; scheduling</li>
+        <li>Scope &amp; BOQ management</li>
+        <li>Contractor coordination</li>
+        <li>SAP, SCADA &amp; Microsoft Office</li>
+      </ul>
+      <h3 class="sub">Languages</h3>
+      <ul class="inline-list"><li>Arabic (native)</li><li>English (professional)</li></ul>
+    </section>
 
-      <!-- Electrical Simplified Channel -->
-      <section id="channel" class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-circle-play"></i> Teaching &amp; Content</h3>
-        <div class="glass-card channel-card">
-          <div>
-            <p class="channel-kicker">Video series</p>
-            <h4 class="channel-name">Electrical Simplified</h4>
-            <p class="hero-desc" style="font-size: 0.92rem;">Short explainer videos on how electricity travels from the power plant to your home, built course-style from the why, to the concept, to the components. Narrated in English with Arabic subtitles.</p>
-            <div class="channel-path" aria-label="Series roadmap">
-              <span>Power Plants</span><i class="fa-solid fa-chevron-right"></i>
-              <span>Transmission</span><i class="fa-solid fa-chevron-right"></i>
-              <span>Substations</span><i class="fa-solid fa-chevron-right"></i>
-              <span>Distribution</span>
-            </div>
-          </div>
-          <div class="channel-actions">
-            <a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener" class="btn-sci btn-primary-sci">
-              <i class="fa-brands fa-youtube"></i> Watch on YouTube
-            </a>
-            <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener" class="btn-sci btn-secondary-sci">
-              <i class="fa-brands fa-tiktok"></i> Follow on TikTok
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Certifications Section -->
-      <section id="credentials" class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-certificate"></i> Professional Certifications</h3>
-        <div class="grid-2col">
-          <div class="glass-card">
-            <div class="exp-title-group" style="margin-bottom:0.9rem">
-              <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-list-check"></i></div>
-              <div>
-                <div class="exp-title">PMP® Certification</div>
-                <div class="exp-company">Project Management Professional</div>
-              </div>
-            </div>
-            <dl class="cred-rows-sci">
-              <dt>Issued by</dt><dd>Project Management Institute (PMI)</dd>
-              <dt>Certification No.</dt><dd>4337782</dd>
-              <dt>Valid</dt><dd>Apr 2026 – Apr 2029</dd>
-            </dl>
-            <a class="verify-btn-sci" href="https://www.pmi.org/certifications/certification-resources/registry" target="_blank" rel="noopener"><i class="fa-solid fa-circle-check"></i> Verify on PMI Registry</a>
-          </div>
-          <div class="glass-card">
-            <div class="exp-title-group" style="margin-bottom:0.9rem">
-              <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-user-tie"></i></div>
-              <div>
-                <div class="exp-title">Professional Classification</div>
-                <div class="exp-company">Saudi Council of Engineers</div>
-              </div>
-            </div>
-            <dl class="cred-rows-sci">
-              <dt>Issued by</dt><dd>Saudi Council of Engineers (SCE)</dd>
-              <dt>Membership No.</dt><dd>827761</dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education" class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-        <div class="stack-list">
-          <div class="glass-card" style="padding: 1.5rem 2rem;">
-            <div class="exp-card-header" style="margin-bottom:0">
-              <div class="exp-title-group">
-                <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-microchip"></i></div>
-                <div>
-                  <div class="exp-title">Bachelor of Applied Engineering – Electrical Engineering</div>
-                  <div class="exp-company">Technical College (TVTC)</div>
-                </div>
-              </div>
-              <span class="sci-badge">2023 | GPA 3.75 / 5 (Very Good)</span>
-            </div>
-          </div>
-          <div class="glass-card" style="padding: 1.5rem 2rem;">
-            <div class="exp-card-header" style="margin-bottom:0">
-              <div class="exp-title-group">
-                <div class="exp-icon" style="background: rgba(74, 222, 128, 0.1); color: var(--green);"><i class="fa-solid fa-gears"></i></div>
-                <div>
-                  <div class="exp-title">Diploma in Electrical Technology</div>
-                  <div class="exp-company">Electrical Machines &amp; Equipment, Technical College (TVTC)</div>
-                </div>
-              </div>
-              <span class="sci-badge">2021 | GPA 4.48 / 5</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Training Courses -->
-      <section class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-chalkboard-user"></i> Training Courses</h3>
-        <div class="skills-sci-grid">
-          <div class="skill-sci-card">
-            <div class="skill-sci-icon"><i class="fa-solid fa-list-check"></i></div>
-            <div>
-              <div class="skill-sci-name">PMP® Preparation Course (35 PDUs)</div>
-              <div class="skill-sci-meta">PM TRICKS, 2026</div>
-            </div>
-          </div>
-          <div class="skill-sci-card">
-            <div class="skill-sci-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
-            <div>
-              <div class="skill-sci-name">Electrical Connection Systems Testing</div>
-              <div class="skill-sci-meta">Royal Commission for Jubail &amp; Yanbu, 2024</div>
-            </div>
-          </div>
-          <div class="skill-sci-card">
-            <div class="skill-sci-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <div>
-              <div class="skill-sci-name">Occupational Health &amp; Safety (NEBOSH)</div>
-              <div class="skill-sci-meta">Top Developed Institute, 2023</div>
-            </div>
-          </div>
-          <div class="skill-sci-card">
-            <div class="skill-sci-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <div>
-              <div class="skill-sci-name">Electrical Fault Analysis &amp; Protection</div>
-              <div class="skill-sci-meta">Specialized Technical Training</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="assembly-item">
-        <h3 class="section-sci-title"><i class="fa-solid fa-toolbox"></i> Professional Skills</h3>
-        <div class="grid-2col">
-          <div class="glass-card">
-            <div class="exp-title-group" style="margin-bottom:0.9rem">
-              <div class="exp-icon"><i class="fa-solid fa-bolt"></i></div>
-              <div class="exp-title">Technical Skills</div>
-            </div>
-            <ul class="tags-cloud">
-              <li>Preventive &amp; Corrective Maintenance</li>
-              <li>Outage Planning &amp; Switching Programs</li>
-              <li>Fault Analysis &amp; Root Cause Analysis</li>
-              <li>MV/LV Distribution Networks</li>
-              <li>Project Planning &amp; Scheduling</li>
-              <li>Scope &amp; BOQ Management</li>
-              <li>Contractor Coordination</li>
-              <li>SAP, SCADA &amp; Microsoft Office</li>
-            </ul>
-          </div>
-          <div class="glass-card">
-            <div class="exp-title-group" style="margin-bottom:0.9rem">
-              <div class="exp-icon"><i class="fa-solid fa-language"></i></div>
-              <div class="exp-title">Languages</div>
-            </div>
-            <ul class="tags-cloud soft">
-              <li>Arabic (Native)</li>
-              <li>English (Professional)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <p class="sci-footer">© 2026 Tariq Khawaji</p>
-    </main>
-
+  </main>
   </div>
 
-  <!-- GSAP & ScrollTrigger Assembly Animation Script -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Sidebar smooth entry animation on load
-    gsap.from(".sci-sidebar", {
-      duration: 1.2,
-      x: -50,
-      opacity: 0,
-      ease: "power3.out"
-    });
-
-    // Particle / Fly-in Scroll Assembly Effect for sections
-    const assemblyItems = document.querySelectorAll(".assembly-item");
-    
-    assemblyItems.forEach((item, index) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        },
-        duration: 0.6,
-        y: 24,
-        opacity: 0,
-        ease: "power3.out",
-        delay: 0.1 * (index % 2)
-      });
-    });
-  </script>
-
+  <footer class="wrap">© 2026 Tariq Khawaji</footer>
 </body>
 </html>
