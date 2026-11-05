@@ -16,6 +16,8 @@
       --steel: #4A6272;
       --rule: #A9B8C0;
       --live: #B86E00;
+      --live-text: #8A5200;
+      --signal: #F2B705;
       --head: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
       --body: 'Source Serif 4', Georgia, serif;
       --rail: 3px;
@@ -32,13 +34,14 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: var(--ink); text-decoration-color: var(--live); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-    a:hover { color: var(--live); }
+    a:hover { color: var(--live-text); }
     a:focus-visible { outline: 3px solid var(--live); outline-offset: 3px; }
 
     .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
 
     /* Hero */
     .hero { padding-block: 4.5rem 1rem; }
+    .hero-top { display: grid; grid-template-columns: 1fr auto; gap: 2rem 3rem; align-items: start; }
     .hero h1 {
       font-family: var(--head);
       font-weight: 700;
@@ -48,14 +51,21 @@
     }
     .hero .role {
       font-family: var(--head);
-      font-weight: 500;
-      font-size: clamp(1.15rem, 2.6vw, 1.6rem);
-      color: var(--steel);
-      margin-top: 0.9rem;
+      font-weight: 600;
+      font-size: clamp(1.25rem, 2.8vw, 1.8rem);
+      margin-top: 1rem;
     }
-    .hero .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; margin-top: 1.6rem; font-family: var(--head); font-weight: 600; font-size: 1.05rem; }
-    .hero .links a.primary { background: var(--ink); color: var(--paper); text-decoration: none; padding: 0.35rem 1rem; border-radius: 2px; }
-    .hero .links a.primary:hover { background: var(--live); color: #fff; }
+    .hero .field { font-family: var(--head); font-weight: 500; color: var(--steel); font-size: 1.1rem; }
+    .hero .statement { font-size: clamp(1.15rem, 2.2vw, 1.4rem); margin-top: 1.4rem; max-width: 30ch; line-height: 1.4; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem; font-family: var(--head); font-weight: 600; font-size: 1.1rem; }
+    .btn { display: inline-block; padding: 0.55rem 1.4rem; border: 2px solid var(--ink); border-radius: 2px; text-decoration: none; color: var(--ink); }
+    .btn.primary { background: var(--signal); }
+    .btn.primary:hover { background: var(--ink); color: var(--signal); }
+    .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+    .photo { position: relative; width: 168px; height: 210px; border: 2px solid var(--ink); background: var(--paper); margin: 0; overflow: hidden; }
+    .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .photo .initials { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--head); font-weight: 700; font-size: 3.4rem; color: var(--steel); }
+    .photo::after { content: ""; position: absolute; left: -2px; right: -2px; bottom: -2px; height: 6px; background: var(--signal); }
 
     /* Single-line diagram */
     .sld-wrap { margin-top: 2.6rem; border-top: 1px solid var(--rule); padding: 1.2rem 0 0; }
@@ -125,11 +135,30 @@
     .series-links { margin-top: 1rem; display: flex; gap: 1.6rem; font-family: var(--head); font-weight: 600; }
 
     /* Title block */
-    .titleblock { width: 100%; max-width: 640px; border: 2px solid var(--ink); border-collapse: collapse; font-size: 0.98rem; }
+    .titleblock { width: 100%; max-width: 720px; border: 2px solid var(--ink); border-collapse: collapse; font-size: 0.98rem; }
     .titleblock th, .titleblock td { border: 1px solid var(--ink); padding: 0.55rem 0.8rem; text-align: left; vertical-align: top; }
-    .titleblock th { font-family: var(--head); font-weight: 600; background: rgba(18,32,43,0.06); width: 34%; }
+    .titleblock th { font-family: var(--head); font-weight: 600; background: rgba(18,32,43,0.06); width: 28%; white-space: nowrap; }
     .titleblock .name td { font-family: var(--head); font-weight: 700; font-size: 1.15rem; border-bottom: 2px solid var(--ink); }
     .verify { margin-top: 0.9rem; font-family: var(--head); font-weight: 600; }
+
+    /* Diagrams in Selected work */
+    .fig { margin-top: 0.9rem; }
+    .fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .fig .ln { stroke: var(--ink); stroke-width: 2; fill: none; }
+    .fig .dash { stroke: var(--steel); stroke-dasharray: 5 4; }
+    .fig .live { stroke: var(--live); }
+    .fig .brk { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+    .fig .brk.closed { fill: var(--ink); }
+    .fig .node { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+    .fig .node.now { fill: var(--signal); }
+    .fig text { font-family: var(--head); font-weight: 500; font-size: 15px; fill: var(--ink); }
+    .fig text.mute { fill: var(--steel); }
+    .work-item + .work-item { margin-top: 2.2rem; }
+    .work-item h3 { font-family: var(--head); font-weight: 600; font-size: 1.2rem; }
+
+    /* Contact */
+    .contact { list-style: none; display: grid; gap: 0.5rem; font-family: var(--head); font-weight: 600; font-size: 1.1rem; }
+    .contact span { display: inline-block; min-width: 6.5rem; color: var(--steel); font-weight: 500; }
 
     /* Lists */
     .plain { list-style: none; display: grid; gap: 0.9rem; }
@@ -142,29 +171,41 @@
     footer { border-top: 1px solid var(--rule); padding: 1.4rem 0 2.5rem; color: var(--steel); font-size: 0.9rem; font-family: var(--head); }
 
     @media (max-width: 760px) {
+      .titleblock th { white-space: normal; width: 34%; }
       :root { --gutter: 28px; }
       .hero { padding-top: 2.8rem; }
+      .hero-top { grid-template-columns: 1fr; }
+      .photo { order: -1; width: 112px; height: 140px; }
+      .photo .initials { font-size: 2.4rem; }
       .facts { grid-template-columns: 1fr 1fr; }
       .facts div:nth-child(3) { border-left: 0; padding-left: 0; }
       .facts div:nth-child(n+3) { border-top: 1px solid var(--rule); }
       .wrap { padding: 0 1rem; }
       section > h2 { font-size: 1.6rem; }
       .sld .lbl { font-size: 20px; }
+      .fig text { font-size: 20px; }
     }
   </style>
 </head>
 <body>
 
   <header class="wrap hero">
-    <h1>Tariq Khawaji</h1>
-    <p class="role">Electrical Engineer, PMP®. MV/LV distribution networks.</p>
-    <p class="links">
-      <a class="primary" href="https://drive.google.com/file/d/1NSpiySoVOFG7P4ECps94Uzwl4LAIHicz/view" target="_blank" rel="noopener">View CV (PDF)</a>
-      <a href="mailto:tarqkhwajy50@gmail.com">tarqkhwajy50@gmail.com</a>
-      <a href="https://www.linkedin.com/in/tariq-khawaji-eng" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener">TikTok</a>
-    </p>
+    <div class="hero-top">
+      <div>
+        <h1>Tariq Khawaji</h1>
+        <p class="role">Electrical Engineer | PMP®</p>
+        <p class="field">MV/LV distribution networks</p>
+        <p class="statement">I keep MV networks running while maintenance happens.</p>
+        <p class="cta">
+          <a class="btn primary" href="/Tariq-Khawaji-CV.pdf" download>Download CV</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/tariq-khawaji-eng" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+      <figure class="photo">
+        <span class="initials" aria-hidden="true">TK</span>
+        <img src="/profile.jpg" alt="Portrait of Tariq Khawaji" width="168" height="210" onerror="this.remove()">
+      </figure>
+    </div>
 
     <div class="sld-wrap">
 <svg class="sld" viewBox="0 0 1000 215" role="img" aria-labelledby="sld-t sld-d" preserveAspectRatio="xMidYMid meet">
@@ -291,12 +332,71 @@
 
     <section id="work">
       <h2>Selected work</h2>
-      <dl class="work">
-        <dt>Switching Programs for planned outages</dt>
-        <dd>Isolation, restoration and load-transfer sequences that let maintenance go ahead while customers stay supplied. Each program is validated against feeder SLDs and approved with the Network Control Center.</dd>
-        <dt>Overhead-to-underground network conversion</dt>
-        <dd>Two MV/LV projects in two regions under SEC's Unified Contract, coordinated from planning to closure: schedules, permits, BOQ-based progress claims and 5+ field teams.</dd>
-      </dl>
+
+      <div class="work-item">
+        <h3>Switching Programs for planned outages</h3>
+        <p>Isolation, restoration and load-transfer sequences that let maintenance go ahead while customers stay supplied. Each program is validated against feeder SLDs and approved with the Network Control Center.</p>
+        <div class="fig">
+          <svg viewBox="0 0 720 150" role="img" aria-labelledby="sw-t sw-d">
+            <title id="sw-t">Switching program sequence</title>
+            <desc id="sw-d">Four steps: isolate the section, transfer its load to a neighbouring feeder, maintain the isolated section, then restore it to service. Generic illustration, not a real network.</desc>
+            <!-- feeder A (top line) and feeder B (bottom line) -->
+            <line x1="0" y1="40" x2="720" y2="40" class="ln"/>
+            <line x1="0" y1="100" x2="720" y2="100" class="ln"/>
+            <!-- step 1: isolate: open breaker on feeder A -->
+            <rect x="73" y="33" width="14" height="14" class="brk"/>
+            <!-- step 2: transfer: tie closed between A and B, section de-energised -->
+            <line x1="260" y1="40" x2="260" y2="100" class="ln live"/>
+            <rect x="253" y="64" width="14" height="14" class="brk closed"/>
+            <!-- step 3: maintain: section dashed -->
+            <line x1="380" y1="40" x2="500" y2="40" class="ln dash" stroke-width="2"/>
+            <rect x="373" y="33" width="14" height="14" class="brk"/>
+            <rect x="493" y="33" width="14" height="14" class="brk"/>
+            <!-- step 4: restore: breakers closed -->
+            <rect x="573" y="33" width="14" height="14" class="brk closed"/>
+            <rect x="613" y="33" width="14" height="14" class="brk closed"/>
+            <g>
+              <circle cx="80" cy="132" r="8" class="node"/><text x="96" y="137">1 Isolate</text>
+              <circle cx="260" cy="132" r="8" class="node"/><text x="276" y="137">2 Transfer load</text>
+              <circle cx="440" cy="132" r="8" class="node"/><text x="456" y="137">3 Maintain</text>
+              <circle cx="600" cy="132" r="8" class="node now"/><text x="616" y="137">4 Restore</text>
+            </g>
+          </svg>
+        </div>
+        <p class="facts-note">Generic illustration of the sequence, not a real network.</p>
+      </div>
+
+      <div class="work-item">
+        <h3>Overhead-to-underground network conversion</h3>
+        <p>Two MV/LV projects in two regions under SEC's Unified Contract, coordinated from planning to closure: schedules, permits, BOQ-based progress claims and 5+ field teams.</p>
+        <div class="fig">
+          <svg viewBox="0 0 720 215" role="img" aria-labelledby="ou-t ou-d">
+            <title id="ou-t">Overhead line replaced by underground cable</title>
+            <desc id="ou-d">Left: an overhead line on two poles. Right: the same route as an underground cable. Below: project phases from planning to closure. Generic illustration.</desc>
+            <!-- overhead -->
+            <line x1="0" y1="110" x2="290" y2="110" class="ln"/>
+            <line x1="70" y1="110" x2="70" y2="30" class="ln"/><line x1="55" y1="40" x2="85" y2="40" class="ln"/>
+            <line x1="220" y1="110" x2="220" y2="30" class="ln"/><line x1="205" y1="40" x2="235" y2="40" class="ln"/>
+            <path d="M70 40 Q145 78 220 40" class="ln"/>
+            <text x="0" y="135" class="mute">Overhead line</text>
+            <!-- arrow -->
+            <line x1="320" y1="75" x2="390" y2="75" class="ln live"/><path d="M382 68 L392 75 L382 82" class="ln live"/>
+            <!-- underground -->
+            <line x1="430" y1="60" x2="720" y2="60" class="ln"/>
+            <line x1="430" y1="95" x2="720" y2="95" class="ln dash live"/>
+            <text x="430" y="135" class="mute">Underground cable</text>
+            <!-- phases -->
+            <line x1="12" y1="195" x2="708" y2="195" class="ln"/>
+            <g>
+              <circle cx="12" cy="195" r="8" class="node"/><text x="26" y="183">Planning</text>
+              <circle cx="190" cy="195" r="8" class="node"/><text x="204" y="183">Permits and approvals</text>
+              <circle cx="460" cy="195" r="8" class="node"/><text x="474" y="183">Site works</text>
+              <circle cx="708" cy="195" r="8" class="node now"/><text x="690" y="183" text-anchor="end">Closure</text>
+            </g>
+          </svg>
+        </div>
+        <p class="facts-note">Generic illustration of the conversion and its phases.</p>
+      </div>
     </section>
 
     <section id="channel">
@@ -335,6 +435,7 @@
         <li><strong>PMP® Preparation Course (35 PDUs)</strong><span>PM TRICKS, 2026</span></li>
         <li><strong>Electrical Connection Systems Testing</strong><span>Royal Commission for Jubail &amp; Yanbu, 2024</span></li>
         <li><strong>Occupational Health &amp; Safety (NEBOSH IGC)</strong><span>Top Developed Institute for Training, 2023</span></li>
+        <!-- TODO (Tariq): add the issuer and year for this course. Do not publish a value you cannot confirm. -->
         <li><strong>Electrical Fault Analysis &amp; Protection Systems</strong><span>Specialized technical training</span></li>
       </ul>
     </section>
@@ -354,6 +455,17 @@
       </ul>
       <h3 class="sub">Languages</h3>
       <ul class="inline-list"><li>Arabic (native)</li><li>English (professional)</li></ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li><span>Email</span><a href="mailto:tarqkhwajy50@gmail.com">tarqkhwajy50@gmail.com</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/tariq-khawaji-eng" target="_blank" rel="noopener">linkedin.com/in/tariq-khawaji-eng</a></li>
+        <li><span>Location</span>Saudi Arabia</li>
+        <li><span>Videos</span><a href="https://youtube.com/@electricalsimplifiedtariq" target="_blank" rel="noopener">YouTube</a> and <a href="https://www.tiktok.com/@electricalsimplified" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+      <p class="cta"><a class="btn primary" href="/Tariq-Khawaji-CV.pdf" download>Download CV</a></p>
     </section>
 
   </main>
